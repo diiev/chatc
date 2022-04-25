@@ -270,7 +270,7 @@ p {
     .burger {
         display: block;
         position: absolute;
-        right: 0px;
+        right: 15px;
         top: 15px;
         width: 30px;
         height: 20px;
@@ -597,6 +597,7 @@ p {
 
 .quoter {
     background-image: url('../img/bg_grozny.webp');
+    
     padding-top: 50px;
     padding-bottom: 80px;
     background-attachment: fixed;
