@@ -982,6 +982,7 @@ p {
 
     .search_head {
         width: 90%;
+        border-radius: 10px;
     }
 
     .logo img {
