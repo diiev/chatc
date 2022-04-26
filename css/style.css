@@ -17,7 +17,8 @@ li {
     margin: 0;
     list-style: none;
 
-} 
+}
+
 i {
     padding: 0;
     margin: 0;
@@ -83,15 +84,14 @@ p {
 
 .search_head {
     border: none;
-    padding: 8px;
+    padding: 8px 0px 8px 35px;
     width: 250px;
-    border-radius: 3px;
-    padding-left: 35px;
+    border-radius: 5px;
     font-size: 16px;
     outline: none;
 }
-.search_head:focus
-{
+
+.search_head:focus {
     outline: 1px solid #0E873F;
 }
 
@@ -114,7 +114,6 @@ p {
 }
 
 .button_icons {
-
     font-size: 22px;
     padding-left: 10px;
 }
@@ -259,170 +258,6 @@ p {
 
 .burger {
     display: none;
-}
-
-@media (max-width: 1024px) {
-    .menu {
-        display: none;
-        font-size: 12px;
-    }
-
-    .menu.active {
-        display: block;
-    }
-
-    .header_middle_flex {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .burger {
-        display: block;
-        position: absolute;
-        right: 10px;
-        top: 15px;
-        width: 30px;
-        height: 20px;
-        transform: scale(0.8);
-
-
-    }
-
-    .burger span {
-        position: absolute;
-        background-color: black;
-        width: 100%;
-        height: 2px;
-        top: 9px;
-        left: 0;
-        transition: all .4s ease 0s;
-    }
-
-    .burger::before,
-    .burger:after {
-        content: '';
-        background-color: black;
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        left: 0;
-        transition: all .4s ease 0s;
-
-    }
-
-    .burger::before {
-        top: 0;
-    }
-
-    .burger:after {
-        bottom: 0;
-    }
-
-    .burger.active:before {
-        transform: rotate(45deg);
-        top: 9px;
-
-    }
-
-    .burger.active:after {
-        transform: rotate(-45deg);
-        bottom: 9px;
-
-    }
-
-    .burger.active span {
-        display: none;
-    }
-
-    .menu__list {
-        display: block;
-        text-align: left;
-    }
-
-    .menu__list>li {
-        margin: 20px 0px 0px 0px;
-    }
-
-    .sub-menu__list,
-    .sub-sub-menu__list {
-        position: relative;
-        left: 0;
-        top: 0;
-        display: none;
-        min-width: 100%;
-        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
-        visibility: visible;
-        z-index: 1;
-        opacity: 1;
-        pointer-events: visible;
-        transform: translate(0px, 0px);
-
-    }
-
-    .arrow>i {
-        transition: all .3s ease 0s;
-    }
-
-    .arrow.active>i {
-        transform: rotate(-180deg);
-        color: black;
-
-    }
-
-    .sub-menu__link.arrow>i {
-        transform: rotate(90deg);
-        transition: all .3s ease 0s;
-        top: 20px;
-
-    }
-
-    .sub-menu__link.arrow.active>i {
-        transform: rotate(-90deg);
-        color: #0E873F;
-
-
-    }
-
-    .sub-menu__list>li:last-child {
-        border-bottom: 1px solid #0E873F;
-    }
-
-    .sub-menu__list>li:hover,
-    .sub-sub-menu__list>li:hover {
-        background-color: transparent;
-    }
-
-    .sub-menu__link:hover,
-    .sub-sub-menu__link:hover {
-        color: #0E873F;
-    }
-
-    .sub-menu__list.open,
-    .sub-sub-menu__list.open {
-
-        display: block;
-    }
-
-    .menu__link i,
-    .sub-menu__link i,
-    .sub-sub-menu__link i {
-        position: absolute;
-        right: 0px;
-        font-size: 12px;
-        z-index: 2;
-    }
-
-    .sub-menu__list>li:hover .sub-menu__link,
-    .sub-sub-menu__list>li:hover .sub-sub-menu__link {
-        color: #0E873F
-    }
-
-    .sub-menu__link,
-    .sub-sub-menu__link {
-        padding: 15px 0px;
-        color: #000;
-    }
-
 }
 
 /* header */
@@ -606,7 +441,7 @@ p {
 
 .quoter {
     background-image: url('../img/bg_grozny.webp');
-    
+
     padding-top: 50px;
     padding-bottom: 80px;
     background-attachment: fixed;
@@ -801,7 +636,7 @@ p {
     border-color: #fff;
 }
 
-/*adaptive*/
+/*tab and mobile */
 
 @media (max-width: 1100px) {
     .menu_header_list {
@@ -818,7 +653,7 @@ p {
         height: 60px;
         width: 60px;
     }
-     
+
     .search {
         margin: 10% 0px 0px 0px;
     }
@@ -867,7 +702,7 @@ p {
 
     .menu_header_list {
         padding-left: 0;
-        padding-top: 5px;
+        padding-top: 10px;
         font-size: 12px;
     }
 
@@ -878,15 +713,179 @@ p {
     .menu_header_top ul {
         display: flex;
         flex-direction: column;
-    } 
+    }
+
+    .menu {
+        display: none;
+        font-size: 12px;
+    }
+
+    .menu.active {
+        display: block;
+    }
+
+    .header_middle_flex {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .burger {
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 15px;
+        width: 30px;
+        height: 20px;
+        transform: scale(0.8);
+
+
+    }
+
+    .burger span {
+        position: absolute;
+        background-color: black;
+        width: 100%;
+        height: 2px;
+        top: 9px;
+        left: 0;
+        transition: all .4s ease 0s;
+    }
+
+    .burger::before,
+    .burger:after {
+        content: '';
+        background-color: black;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        transition: all .4s ease 0s;
+
+    }
+
+    .burger::before {
+        top: 0;
+    }
+
+    .burger:after {
+        bottom: 0;
+    }
+
+    .burger.active:before {
+        transform: rotate(45deg);
+        top: 9px;
+
+    }
+
+    .burger.active:after {
+        transform: rotate(-45deg);
+        bottom: 9px;
+
+    }
+
+    .burger.active span {
+        display: none;
+    }
+
+    .menu__list {
+        display: block;
+        text-align: left;
+    }
+
+    .menu__list>li {
+        margin: 20px 0px 0px 0px;
+    }
+
+    .sub-menu__list,
+    .sub-sub-menu__list {
+        position: relative;
+        left: 0;
+        top: 0;
+        display: none;
+        min-width: 100%;
+        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+        visibility: visible;
+        z-index: 1;
+        opacity: 1;
+        pointer-events: visible;
+        transform: translate(0px, 0px);
+
+    }
+
+    .arrow>i {
+        transition: all .3s ease 0s;
+    }
+
+    .arrow.active>i {
+        transform: rotate(-180deg);
+        color: black;
+
+    }
+
+    .sub-menu__link.arrow>i {
+        transform: rotate(90deg);
+        transition: all .3s ease 0s;
+        top: 20px;
+
+    }
+
+    .sub-menu__link.arrow.active>i {
+        transform: rotate(-90deg);
+        color: #0E873F;
+
+
+    }
+
+    .sub-menu__list>li:last-child {
+        border-bottom: 1px solid #0E873F;
+    }
+
+    .sub-menu__list>li:hover,
+    .sub-sub-menu__list>li:hover {
+        background-color: transparent;
+    }
+
+    .sub-menu__link:hover,
+    .sub-sub-menu__link:hover {
+        color: #0E873F;
+    }
+
+    .sub-menu__list.open,
+    .sub-sub-menu__list.open {
+
+        display: block;
+    }
+
+    .menu__link i,
+    .sub-menu__link i,
+    .sub-sub-menu__link i {
+        position: absolute;
+        right: 0px;
+        font-size: 12px;
+        z-index: 2;
+    }
+
+    .sub-menu__list>li:hover .sub-menu__link,
+    .sub-sub-menu__list>li:hover .sub-sub-menu__link {
+        color: #0E873F
+    }
+
+    .sub-menu__link,
+    .sub-sub-menu__link {
+        padding: 15px 0px;
+        color: #000;
+    }
+
     .item_slider {
         padding: 0px 5px;
     }
+
     .quoter {
         background-attachment: none;
         background-position: center;
         background-size: cover;
     }
+
     .quote {
         font-size: 25px;
     }
@@ -908,7 +907,7 @@ p {
 
         font-size: 16px;
     }
-  
+
     .footer_top {
         display: none;
     }
@@ -922,7 +921,7 @@ p {
     }
 
     .links_button {
-        transform: scale(0.9);
+        font-size: 20px;
     }
 
 }
@@ -965,10 +964,6 @@ p {
         align-items: center;
     }
 
-    .menu_header_list {
-        padding-top: 2px;
-    }
-
     .social_btns a {
 
         font-size: 18px;
@@ -1005,7 +1000,7 @@ p {
     }
 
     .icon_box {
-       padding: 10px 0px;
+        padding: 10px 0px;
     }
 
     .icon_box i,
@@ -1071,14 +1066,14 @@ p {
     }
 
     .copyright p {
-        font-size: 10px;
+        font-size: 8px;
         text-align: center;
     }
 
-    .links_button {
-        transform: scale(0.8);
-        padding: 5px;
+    .links_button a {
+      font-size: 17px;
     } 
+
     .slick-dots li button:before {
         font-size: 6px;
     }
