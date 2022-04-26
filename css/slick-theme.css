@@ -47,7 +47,7 @@
 }
 .logo_slider .slick-prev,
 .logo_slider .slick-next {
-    top: 45%;
+    top: 35%;
 
 }
 
@@ -210,4 +210,10 @@
 .slick-dots li.slick-active button:before {
     opacity: .75;
     color: black;
+}
+@media (max-width:767px) {
+    .slick-dots li button:before {
+        font-size: 6px;
+       
+    }
 }

@@ -76,10 +76,19 @@ $('.slider').slick({
       {
       breakpoint: 767,
       settings: {
-         slidesToShow: 1,
+         slidesToShow: 2,
          arrows: false
-      } 
+      }  
+      
      },
+     {
+      breakpoint: 500,
+      settings: {
+        slidesToShow: 1,
+        arrows: false,
+        dots:  true
+      }
+    }
    
     ] 
   });

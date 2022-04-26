@@ -880,7 +880,7 @@ p {
         flex-direction: column;
     } 
     .item_slider {
-        padding: 0;
+        padding: 0px 5px;
     }
     .quoter {
         background-attachment: none;
