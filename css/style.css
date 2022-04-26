@@ -883,7 +883,7 @@ p {
         padding: 0;
     }
     .quoter {
-        background-attachment: fixed;
+        background-attachment: none;
         background-position: center;
         background-size: cover;
     }
