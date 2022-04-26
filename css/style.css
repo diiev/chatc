@@ -870,7 +870,11 @@ p {
         display: flex;
         flex-direction: column;
     }
-
+    .quoter {
+        background-attachment: none;
+        background-position: center;
+        background-size: cover;
+    }
     .quote {
         font-size: 25px;
     }
