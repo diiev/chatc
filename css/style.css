@@ -82,8 +82,13 @@ p {
     padding: 8px;
     width: 250px;
     border-radius: 3px;
-    padding-left: 30px;
-    font-size: 15px;
+    padding-left: 35px;
+    font-size: 16px;
+    outline: none;
+}
+.search_head:focus
+{
+    outline: 1px solid #0E873F;
 }
 
 .search {
@@ -94,8 +99,8 @@ p {
 
 .fa-magnifying-glass {
     position: absolute;
-    left: 6px;
-    top: 25%;
+    left: 8px;
+    top: 9px;
     opacity: .6;
     font-size: 15px;
 }
@@ -809,7 +814,7 @@ p {
         height: 60px;
         width: 60px;
     }
-
+     
     .search {
         margin: 10% 0px 0px 0px;
     }
@@ -869,9 +874,12 @@ p {
     .menu_header_top ul {
         display: flex;
         flex-direction: column;
+    } 
+    .item_slider {
+        padding: 0;
     }
     .quoter {
-        background-attachment: none;
+        background-attachment: none !important;
         background-position: center;
         background-size: cover;
     }
@@ -896,7 +904,7 @@ p {
 
         font-size: 16px;
     }
-
+  
     .footer_top {
         display: none;
     }
@@ -922,7 +930,7 @@ p {
     }
 
     h3 {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     h4 {
@@ -993,8 +1001,7 @@ p {
     }
 
     .icon_box {
-        transform: scale(0.95);
-        padding: 10px 0px;
+       padding: 10px 0px;
     }
 
     .icon_box i,
@@ -1067,6 +1074,9 @@ p {
     .links_button {
         transform: scale(0.8);
         padding: 5px;
+    } 
+    .slick-dots li button:before {
+        font-size: 6px;
     }
 
 }
