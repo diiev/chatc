@@ -126,11 +126,3 @@ $('.slider').slick({
     });
 
   }); 
-
-  // $(document).ready(function(){
-  //   $('.questions_accordion_item').click(function(event){
-  //     $(this).toggleClass('active').next().slideToggle(400);
-  //     $('.questions_accordion_item').not($(this)).removeClass('active');
-  //     $('.accordion_item_content').not($(this).next()).slideUp(400);
-  //   });
-  // });
