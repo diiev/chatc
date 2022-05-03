@@ -720,9 +720,7 @@ p {
         font-size: 12px;
     }
 
-    .menu.active {
-        display: block;
-    }
+ 
 
     .header_middle_flex {
         flex-direction: column;
