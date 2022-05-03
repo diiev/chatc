@@ -93,7 +93,7 @@
             "20px 16px 16px";
         if (o > 1422) t["max-width"] = "1422px", t["grid-template-columns"] = "1fr 720px", t[
                 "content-padding"] = "32px 48px 32px 160px", t.background =
-            "linear-gradient(90deg, #b5d43c 50%, #f8efec 50%)";
+            "linear-gradient(90deg, #999 50%, #f8efec 50%)";
         setStyles(t, e)
     }
     changePosBannerOnResize(), window.addEventListener("resize", changePosBannerOnResize), window
