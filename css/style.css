@@ -82,9 +82,10 @@ h2 {
     padding-top: 30px;
     padding-bottom: 30px;
 }
-input {
+* {
     -webkit-appearance: none;
   -moz-appearance: none;
+  appearance: none;
 }
 h3 {
     color: #fff;
