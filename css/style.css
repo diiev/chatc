@@ -82,7 +82,10 @@ h2 {
     padding-top: 30px;
     padding-bottom: 30px;
 }
-
+input {
+    -webkit-appearance: none;
+  -moz-appearance: none;
+}
 h3 {
     color: #fff;
     cursor: pointer;
@@ -982,7 +985,6 @@ p {
 
     .quoter.ios{
         background-attachment: local ;
-        /* background-size: contain ; */
     }
 
     .quote {
