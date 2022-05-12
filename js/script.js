@@ -4,7 +4,21 @@ $('.slider_banner').slick({
   speed: 500,
   fade: true,
   cssEase: 'linear',
-  arrows: true
+  arrows: true,
+  responsive: [{
+    breakpoint: 1024,
+    settings: {
+      arrows: false
+    }
+  },
+  {
+    breakpoint: 767,
+    settings: {
+      arrows: false
+    }
+  }
+ ]
+   
 });
 $('.slider').slick({
   slidesToShow: 3,
@@ -125,6 +139,11 @@ if (isMobile.any()) {
   }
 } else {
   body.classList.add('mouse');
+} 
+// для background ios
+let quoter_slider = document.querySelector('.quoter');
+if (isMobile.iOS()) { 
+    quoter_slider.classList.add('ios')
 }
 /* burger */
 $(document).ready(function () {

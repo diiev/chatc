@@ -152,6 +152,7 @@ p {
 
 .buttons {
     display: flex;
+    position: relative;
 }
 
 .button_icons {
@@ -159,8 +160,30 @@ p {
     padding-left: 10px;
 }
 
-/* header_top */
+.tolip_item {
+    position: absolute;
+    transform: translate(0px, 50px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    right: 0px;
+    font-size: 13px;
+    background-color: rgba(0, 0, 0, 0.63);
+    color:#fff;
+    padding: 7px;
+    border-radius: 5px;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
 
+} 
+.tolip:hover .tolip_item {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0px, 30px);
+    pointer-events: visible;
+}
+/* header_top */
 
 .menu_item {
     padding-left: 14px;
@@ -708,7 +731,7 @@ p {
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
     .top_arrow {
         bottom:50px;
          height: 40px;
@@ -957,10 +980,9 @@ p {
         padding: 0px 5px;
     }
 
-    .quoter {
-        background-attachment: none;
-        background-position: center;
-        background-size: contain;
+    .quoter.ios{
+        background-attachment: local ;
+        /* background-size: contain ; */
     }
 
     .quote {
@@ -1003,7 +1025,8 @@ p {
 
 }
 
-@media (max-width: 767px) { 
+@media (max-width: 767px) {  
+  
     .top_arrow {
          height: 30px;
         width: 30px;
@@ -1068,13 +1091,10 @@ p {
         height: 50px;
         width: 50px;
     }
-
-    .slider_banner_item video,
-    .slider_banner_item img {
-        height: 200px;
-
+      .slider_banner.slick-slider 
+    {
+        display: none;
     }
-
     .title_banner h1 {
         font-size: 15px;
     }
@@ -1158,8 +1178,5 @@ p {
       font-size: 17px;
     } 
 
-    .slick-dots li button:before {
-        font-size: 6px;
-    } 
 
 }
