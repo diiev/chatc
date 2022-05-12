@@ -40,7 +40,7 @@
     }
     var POS_PREFIX_19 = "--pos-banner-fluid-19__",
         posOptionsInitialBanner19 = {
-            background: "#b5d43c",
+            background: "#5571",
             "grid-template-columns": "100%",
             "grid-template-rows": "262px auto",
             "max-width": "100%",
@@ -93,7 +93,7 @@
             "20px 16px 16px";
         if (o > 1422) t["max-width"] = "1422px", t["grid-template-columns"] = "1fr 720px", t[
                 "content-padding"] = "32px 48px 32px 160px", t.background =
-            "linear-gradient(90deg, #999 50%, #f8efec 50%)";
+            "linear-gradient(90deg, #5571 50%, #f8efec 50%)";
         setStyles(t, e)
     }
     changePosBannerOnResize(), window.addEventListener("resize", changePosBannerOnResize), window
