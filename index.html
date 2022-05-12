@@ -149,16 +149,8 @@
     <!--header-->
     <section class="slider_banner">
         <div class="slider_banner_item">
-            <div class="overlay_header"></div>
+            <div class="overlay"></div>
             <video src="video/banner.mp4" autoplay muted loop></video>
-            <div class="title_banner">
-                <h1>ДОБРО ПОЖАЛОВАТЬ <br> В "ЧЕЧЕНСКИЙ АГРАРНО-ТЕХНИЧЕСКИЙ КОЛЛЕДЖ"</h1>
-            </div>
-        </div> 
-        <div class="slider_banner_item">
-            <div class="overlay_header"></div>
-            <!-- <video src="video/banner.mp4" autoplay muted loop></video> -->
-            <img src="../img/bg_grozny.webp" alt="">
             <div class="title_banner">
                 <h1>ДОБРО ПОЖАЛОВАТЬ <br> В "ЧЕЧЕНСКИЙ АГРАРНО-ТЕХНИЧЕСКИЙ КОЛЛЕДЖ"</h1>
             </div>
@@ -359,13 +351,12 @@
         <div class="container">
             <h2>ФОТОГАЛЕРЕЯ</h2>
             <div class="gallery">
-                <div class="gallery_img"><img loading="lazy" src="img/15.02.14-Оснащение-средствами-автоматизации.webp">
-                </div>
-                <div class="gallery_img"><img loading="lazy" src="img/bg_grozny.webp"></div>
+                <div class="gallery_img"><a data-fslightbox="photo_gallery" href="/img/15.02.14-Оснащение-средствами-автоматизации.webp"><img loading="lazy" src="img/15.02.14-Оснащение-средствами-автоматизации.webp"></a></div>
                 <div class="gallery_img"><img loading="lazy" src="img/news.jpg"></div>
                 <div class="gallery_img"><img loading="lazy" src="img/Ветеринария.webp"></div>
                 <div class="gallery_img"><img loading="lazy" src="img/Программирование.png"></div>
                 <div class="gallery_img"><img loading="lazy" src="img/Экономика и бухучет.png"></div>
+                <div class="gallery_img"><img loading="lazy" src="img/Программирование.png"></div>
             </div>
         </div>
     </section>
@@ -396,7 +387,8 @@
                     <a href=""> <i class="fas fa-info-circle"></i> Рекомендации по защите персональных данных</a>
                     <a href=""> <i class="fas fa-bullhorn"></i> Противодействие коррупции</a>
                     <a href=""> <i class="fas fa-sitemap "></i> Карта сайта</a>
-                </div>
+                </div> 
+           
                 <div class="footer_menu">
                     <div class="footer_menu_item">
                         <h3>СВЕДЕНИЯ</h3>
@@ -421,7 +413,7 @@
                             <li><a href="">Государственная итоговая аттестация </a></li>
                         </ul>
                     </div>
-                    <div class="footer_menu_item">
+                    <div class="footer_menu_item footer_menu_item_last">
                         <h3>АБИТУРИЕНТУ</h3>
                         <ul>
                             <li><a href="">Специальности колледжа</a></li>
@@ -456,6 +448,7 @@
     </footer>
            
     <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/fslightbox.js"></script>
     <script type="text/javascript" src="js/slick.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script src='https://pos.gosuslugi.ru/bin/script.min.js'></script>

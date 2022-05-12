@@ -489,7 +489,7 @@ p {
     justify-content: space-between;
     align-items: center;
     justify-items: center;
-
+   
 }
 
 .header_top {
@@ -510,7 +510,7 @@ p {
 }
 
 .search_head:focus {
-    box-shadow: -2px 0px 6px 3px #d9ece3
+    box-shadow: 0px 0px 2px 2px #0e873e55;
 }
 
 .search {
@@ -575,19 +575,17 @@ p {
 .menu_list {
     display: flex;
     flex-wrap: wrap;
+    gap: 20px;
+
 }
 
 .menu_header_list {
-    padding-left: 25px;
+  
     font-size: 13px;
 }
 
 .menu_header_list>a>i {
     padding-right: 3px;
-}
-
-.menu_header_list:first-child {
-    padding-left: 0px;
 }
 
 .menu_header_list:hover {
@@ -617,7 +615,7 @@ p {
 }
 
 .menu__list>li {
-    margin: 0px 0px 0px 15px;
+    margin: 10px 0px 0px 15px;
 
 }
 
@@ -704,12 +702,13 @@ p {
 }
 
 /* header */
-.overlay_header {
+.overlay {
     position: absolute;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, 0.7);
     height: 100%;
+    width: 100%;
+    top: 0;
 }
-
 .slider_banner_item {
     object-fit: cover;
     width: 100%;
@@ -893,13 +892,7 @@ p {
     background-size: cover;
 }
 
-.overlay {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.7);
-    height: 100%;
-    width: 100%;
-    top: 0;
-}
+
 
 
 .item_quoter_slider img {
@@ -1029,12 +1022,6 @@ p {
 
 }
 
-.footer_menu_item {
-    padding-top: 30px;
-    max-width: 302px;
-
-
-}
 
 .footer_bottom {
     background-color: #212D3A;
@@ -1043,8 +1030,15 @@ p {
 .footer_menu {
     display: flex;
     justify-content: space-between;
-
+    flex-direction: row;
 }
+
+.footer_menu_item {
+    padding-top: 30px;
+    max-width: 302px;
+  
+}
+
 
 .footer_copy {
     display: flex;
@@ -1107,14 +1101,15 @@ p {
 
 /*tab and mobile */
 
-@media (max-width: 1100px) {
-    .menu_header_list {
-        padding-left: 8px;
+@media (max-width: 1130px) {
+    
+    .menu_header_top ul {
+        gap: 10px;
+    } 
+    .search_head {
+      width:  150px;
     }
-
-    .search {
-        margin: 0px;
-    }
+   
 }
 
 @media (max-width: 1023px) {
@@ -1182,8 +1177,6 @@ p {
     }
 
     .menu_header_list {
-        padding-left: 0;
-        padding-top: 10px;
         font-size: 12px;
     }
 
