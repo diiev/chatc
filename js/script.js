@@ -4,7 +4,7 @@ $('.slider_banner').slick({
   speed: 500,
   fade: true,
   cssEase: 'linear',
-  arrows: false
+  arrows: true
 });
 $('.slider').slick({
   slidesToShow: 3,
@@ -138,7 +138,7 @@ $(document).ready(function () {
 // кнопка навверх 
 $(function () {
   $(window).scroll(function () {
-    if ($(this).scrollTop() != 0) {
+    if ($(this).scrollTop() > 2000 ) {
       $('.top_arrow').fadeIn();
     } else {
       $('.top_arrow').fadeOut();
@@ -147,7 +147,7 @@ $(function () {
   $('.top_arrow').click(function () {
     $('body,html').animate({
       scrollTop: 0
-    }, 800);
+    }, 1000);
   });
 
 });

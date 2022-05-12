@@ -1,29 +1,69 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
-
+/* Fonts */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/static/Montserrat-Thin.ttf');
+    font-weight: 100;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/static/Montserrat-ExtraLight.ttf');
+    font-weight: 200;
+} 
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/static/Montserrat-Light.ttf');
+    font-weight: 300;
+} 
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/static/Montserrat-Regular.ttf');
+    font-weight: 400;
+} 
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/static/Montserrat-Medium.ttf');
+    font-weight: 500;
+} 
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/static/Montserrat-SemiBold.ttf');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/static/Montserrat-Bold.ttf');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/static/Montserrat-ExtraBold.ttf');
+    font-weight: 800;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/static/Montserrat-Black.ttf');
+    font-weight: 900;
+}
+/* normalize */
 body {
     padding: 0;
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
-
+    font-family: 'Montserrat';
 }
-
 ul {
     padding: 0;
     margin: 0;
 }
-
 li {
     padding: 0;
     margin: 0;
     list-style: none;
-
 }
 
 i {
     padding: 0;
     margin: 0;
 }
-
 a {
     text-decoration: none;
     color: #000;
@@ -32,11 +72,9 @@ a {
     -webkit-transition: .3s all;
     line-height: 1.5;
 }
-
 a:hover {
     color: #0E873F;
 }
-
 h2 {
     font-size: 45px;
     font-weight: 400;
@@ -434,16 +472,9 @@ p {
 }
 
 /*our_spec*/
-.quoter_slider {
-    padding: 0px 25px;
-
-}
-
 .quoter {
     background-image: url('../img/bg_grozny.webp');
-
-    padding-top: 50px;
-    padding-bottom: 80px;
+    padding: 100px 0px;
     background-attachment: fixed;
     position: relative;
     background-position: center;
@@ -651,7 +682,8 @@ p {
  }
  .top_arrow i {
      color: #fff;
-     font-size: 22px;
+     font-size: 20px;
+     padding-top: 10px;
  }
  .top_arrow:hover  {
      background-color: #000;
