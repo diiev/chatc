@@ -56,6 +56,7 @@ $('.slider').slick({
 
 $('.quoter_slider').slick({
   slidesToShow: 1,
+  dots: true,
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 3000,

@@ -21,12 +21,12 @@
     -moz-transition: all .3s;
 }
 .slick-prev {
-    left: -10px;
+    left: 0px;
     transform: rotate(-132deg);
 }
 
 .slick-next {
-    right: -10px;
+    right: 0px;
     transform: rotate(45deg);
 }
 
@@ -131,7 +131,11 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
+.quoter_slider .slick-dots li button::before
+{
+    background-color: #fff;
+    margin-top: 50px;
+}
 .slick-dots li.slick-active button:before {
     opacity: .75;
 }
