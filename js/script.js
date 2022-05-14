@@ -154,7 +154,10 @@ $(document).ready(function () {
 if (isMobile.any()) {
  $('body').addClass('touch'); 
  $(document).ready(function () {
-  $('.arrow').click(function (event) {
+  $('.arrow').click(function (event) {  
+    if ($('.arrow').hasClass('parent')) {
+      $('.arrow').removeClass('active').next().removeClass('open').slideUp(600);
+    }  
     $(this).addClass('parent').toggleClass('active').next().toggleClass('open').slideToggle(600);
   });
 });  
