@@ -124,37 +124,51 @@ let isMobile = {
     return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
   }
 };
-let body = document.querySelector('body');
+// let body = document.querySelector('body');
+// if (isMobile.any()) {
+//   body.classList.add('touch');
+//   let arrow = document.querySelectorAll('.arrow');
+//   for (i = 0; i < arrow.length; i++) {
+//     let thisLink = arrow[i];
+//     let subMenu = arrow[i].nextElementSibling;
+//     let thisArrow = arrow[i];
+//     thisLink.classList.add('parent');
+//     arrow[i].addEventListener('click', function () {
+//       subMenu.classList.toggle('open');
+//       thisArrow.classList.toggle('active'); 
+
+//     });
+//   }
+// } else {
+//   body.classList.add('mouse');
+// }   
+ 
+/* burger */
+$(document).ready(function () {
+  $('.burger').click(function (event) {
+    $('.burger, .menu').toggleClass('active').next().slideToggle(600);
+    $('body').toggleClass('lock');
+  });
+}); 
+// меню 
 if (isMobile.any()) {
-  body.classList.add('touch');
-  let arrow = document.querySelectorAll('.arrow');
-  for (i = 0; i < arrow.length; i++) {
-    let thisLink = arrow[i];
-    let subMenu = arrow[i].nextElementSibling;
-    let thisArrow = arrow[i];
-    thisLink.classList.add('parent');
-    arrow[i].addEventListener('click', function () {
-      subMenu.classList.toggle('open');
-      thisArrow.classList.toggle('active');
-    });
-  }
-} else {
-  body.classList.add('mouse');
-} 
+ $('body').addClass('touch'); 
+ $(document).ready(function () {
+  $('.arrow').click(function (event) {
+    $(this).addClass('parent').toggleClass('active').next().toggleClass('open').slideToggle(600);
+  });
+});  
+}
+else {
+  $('body').addClass('mouse'); 
+}
+
+
 // для background ios
 let quoter_slider = document.querySelector('.quoter');
 if (isMobile.iOS()) { 
     quoter_slider.classList.add('ios')
 }
-/* burger */
-$(document).ready(function () {
-  $('.burger').click(function (event) {
-    $('.burger, .menu').toggleClass('active').next().slideToggle(500);
-    $('body').toggleClass('lock');
-  });
-
-});
-
 // кнопка навверх 
 $(function () {
   $(window).scroll(function () {
@@ -171,21 +185,3 @@ $(function () {
   });
 
 }); 
-
-
-$('img.img-svg').each(function(){
-  var $img = $(this);
-  var imgClass = $img.attr('class');
-  var imgURL = $img.attr('src');
-  $.get(imgURL, function(data) {
-    var $svg = $(data).find('svg');
-    if(typeof imgClass !== 'undefined') {
-      $svg = $svg.attr('class', imgClass+' replaced-svg');
-    }
-    $svg = $svg.removeAttr('xmlns:a');
-    if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
-      $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
-    }
-    $img.replaceWith($svg);
-  }, 'xml');
-});
