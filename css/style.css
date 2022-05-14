@@ -469,7 +469,9 @@ p {
     opacity: .6;
     font-size: 15px;
 }
-
+.fa-magnifying-glass.search_icon_ios {
+    top: 11px;
+}
 .buttons {
     display: flex;
     position: relative;

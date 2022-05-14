@@ -164,10 +164,13 @@ else {
 }
 
 
-// для background ios
+// для ios
 let quoter_slider = document.querySelector('.quoter');
+let search_icon = document.querySelector('.fa-magnifying-glass');
+
 if (isMobile.iOS()) { 
-    quoter_slider.classList.add('ios')
+    quoter_slider.classList.add('ios');
+    search_icon.classList.add('search_icon_ios');
 }
 // кнопка навверх 
 $(function () {
