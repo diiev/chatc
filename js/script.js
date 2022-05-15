@@ -124,24 +124,6 @@ let isMobile = {
     return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
   }
 };
-// let body = document.querySelector('body');
-// if (isMobile.any()) {
-//   body.classList.add('touch');
-//   let arrow = document.querySelectorAll('.arrow');
-//   for (i = 0; i < arrow.length; i++) {
-//     let thisLink = arrow[i];
-//     let subMenu = arrow[i].nextElementSibling;
-//     let thisArrow = arrow[i];
-//     thisLink.classList.add('parent');
-//     arrow[i].addEventListener('click', function () {
-//       subMenu.classList.toggle('open');
-//       thisArrow.classList.toggle('active'); 
-
-//     });
-//   }
-// } else {
-//   body.classList.add('mouse');
-// }   
  
 /* burger */
 $(document).ready(function () {
@@ -154,17 +136,15 @@ $(document).ready(function () {
 if (isMobile.any()) {
  $('body').addClass('touch'); 
  $(document).ready(function () {
-  $('.arrow').click(function (event) {  
-    if ($('.arrow').hasClass('parent')) {
-      $('.arrow').removeClass('active').next().removeClass('open').slideUp(600);
-    }  
-    $(this).addClass('parent').toggleClass('active').next().toggleClass('open').slideToggle(600);
-  });
+  $('.arrow').click(function (event) {     
+      $(this).addClass('parent').toggleClass('active').next().toggleClass('open').slideToggle(600);       
+  }); 
 });  
 }
 else {
   $('body').addClass('mouse'); 
-}
+} 
+
 
 
 // для ios
