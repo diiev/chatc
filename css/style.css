@@ -1984,3 +1984,51 @@ p {
 }
 
 /* ********************** */
+/* speciality.html */
+.speciality_aside {
+    width: 30%;
+    padding: 20px;
+}
+.speciality_content {
+    width: 70%;
+}
+.speciality_info {
+    background-color: #F5F5F58F; 
+    box-sizing: border-box;
+    padding: 20px;
+}
+.speciality_info p {
+    font-size: 16px;
+    display: block;
+    line-height: 1.7em;
+    padding-top: 5px;
+}
+.period_education_title,
+.kcp_title,
+.qualification_title,
+.form_education_title {
+    color: #0E873F;
+    font-weight: 600;
+    padding-right: 5px;
+}
+.kafedra_info {
+    margin-top: 20px;
+    border: 1px solid #0E873F;
+}
+.kafedra_info p {
+ display: block;
+}
+.kafedra_image {
+    height: 150px;
+    width: 150px;
+    border: 1px solid #0E873F;
+
+    overflow: hidden;
+    border-radius: 100%;
+}
+.kafedra_image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
