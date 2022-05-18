@@ -2204,7 +2204,12 @@ p {
     height: 150px;
     overflow: hidden;
     padding: 10px;
+    
 }
+.block_image:hover img {
+    filter: brightness(0.7);
+}
+
 .block_image img {
     height: 100%;
     width: 100%;
