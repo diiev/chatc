@@ -441,7 +441,9 @@ a {
     line-height: 1.5em;
     background-color: transparent;
 }
-
+a:visited {
+    color:transparent;
+}
 a:hover {
     color: #0E873F;
 }
@@ -467,6 +469,7 @@ p {
     padding: 0;
     margin: 0;
     display: inline-block;
+    text-align: justify;
 
 }
 
@@ -1602,6 +1605,7 @@ p {
     font-size: 32px;
     margin: 0;
     padding: 25px 0px;
+    text-transform: uppercase;
 }
 
 .single_post_title {
@@ -1867,7 +1871,9 @@ p {
     display: block;
     font-size: 15px;
 }
-
+.pagination.mobile {
+    display: none;
+}
 @media (max-width:1023px) {
     .content {
         padding: 15px 0px;
@@ -1929,6 +1935,12 @@ p {
     .prev_post_title,
     .next_post_title {
         font-size: 13px;
+    } 
+    .pagination {
+        display: none;
+    }
+    .pagination.mobile {
+        display: block;
     }
 }
 
@@ -2160,5 +2172,63 @@ p {
     } 
     .content_btn a {
         font-size: 12px;
+    }
+}
+
+/* osnovnie sveden */
+.page_content {
+    padding: 50px 0px;
+}
+.content_block {
+    box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 50%);
+    margin-top: 0px;
+    margin-bottom: 30px;
+    padding: 15px 15px 15px 15px;
+    display: flex;
+    justify-content: space-between;
+}  
+.block_info {
+    width: 80%;
+    padding: 10px;
+}
+.block_info_title {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    font-size: 23px;
+    font-weight: 500;
+    padding: 0px 0px 20px 0px;
+}
+.block_image {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    padding: 10px;
+}
+.block_image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+} 
+@media  (max-width:1023px) {
+    .block_info_title {
+        font-size: 20px;
+    }
+}
+@media  (max-width:767px) { 
+    .content_block {
+        flex-direction: column-reverse;
+    }
+    .block_info {
+        width: 100%;
+        padding: 0;
+    }
+    .block_info_title {
+        font-size: 18px;
+    } 
+    .block_image {
+        height: 100px;
+        width: 100px;
     }
 }
