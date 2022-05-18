@@ -2033,11 +2033,13 @@ p {
     overflow: hidden;
     border-radius: 100%;
     margin:  0 auto;
+    
 }
 .kafedra_image img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+   
 
 } 
 .zavkaf_name {
