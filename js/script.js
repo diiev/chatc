@@ -169,5 +169,31 @@ $(function () {
       scrollTop: 0
     }, 1000);
   });
-
+ 
 }); 
+ // accordion
+$(document).ready(function () {
+  $('.accordion_item').click(function (event) {
+    $(this).toggleClass('active').next().slideToggle(600);
+    $('.accordion_item').not($(this)).removeClass('active');
+    $('.accordion_item_content').not($(this).next()).slideUp(600);
+  });
+});
+
+// svg 
+$('img.img-svg').each(function(){
+  var $img = $(this);
+  var imgClass = $img.attr('class');
+  var imgURL = $img.attr('src');
+  $.get(imgURL, function(data) {
+    var $svg = $(data).find('svg');
+    if(typeof imgClass !== 'undefined') {
+      $svg = $svg.attr('class', imgClass+' replaced-svg');
+    }
+    $svg = $svg.removeAttr('xmlns:a');
+    if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
+      $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
+    }
+    $img.replaceWith($svg);
+  }, 'xml');
+});
