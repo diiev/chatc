@@ -144,9 +144,6 @@ if (isMobile.any()) {
 else {
   $('body').addClass('mouse'); 
 } 
-
-
-
 // для ios
 let quoter_slider = document.querySelector('.quoter');
 let search_icon = document.querySelector('.fa-magnifying-glass');
