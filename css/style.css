@@ -439,7 +439,6 @@ a {
     -moz-transition: .3s all;
     -webkit-transition: .3s all;
     line-height: 1.5em;
-    background-color: transparent;
 }
 a:visited {
     color:transparent;
@@ -465,11 +464,10 @@ h3 {
 
 p {
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 2em;
     padding: 0;
     margin: 0;
     display: inline-block;
-    text-align: justify;
 
 }
 
@@ -2067,7 +2065,7 @@ p {
 } 
 .kafedra_email {
     font-size: 14px;
-    padding: 15px 0px;
+    padding: 15px 0px;18px
 } 
 .kafedra_email i{
     margin-right: 5px;
@@ -2077,17 +2075,23 @@ p {
     text-align: justify;
 } 
 .content_btn {
-    margin: 30px 0px 30px 0px;
+    margin: 20px 0px;
+    display: flex;
+    flex-wrap: wrap;
 }
 .content_btn a { 
     font-size: 15px;
     border:  1px solid #000;
-    padding: 10px 20px 10px 20px;
-    margin: 0px 10px 0px 0px;
+    padding: 10px 20px;
+    margin: 20px 10px 0px 0px;
+    transition: all 0s;
+    transition: background  .3s;
+    -webkit-transition: background  .3s;
+    -moz-transition: background  .3s;
 } 
 .content_btn a i {
     margin-right: 7px;
-    font-size: 16px;
+    font-size: 18px;
 }
 .content_btn a:hover {
     background-color: #0E873F;
@@ -2215,6 +2219,10 @@ p {
     width: 100%;
     object-fit: cover;
     display: block;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    cursor: pointer;
 } 
 @media  (max-width:1023px) {
     .block_info_title {
@@ -2237,3 +2245,70 @@ p {
         width: 100px;
     }
 }
+/* struktura_i_organi */
+.page_content_title {
+    color: #000;
+    font-size: 23px;
+} 
+.page_content_text {
+    font-size: 17px;
+    text-align: justify;
+    line-height: 2em;
+}
+.accordion {
+    border: 1px solid #000;
+}
+.accordion_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #000;
+}
+.accordion_item i {
+    padding: 0px 15px;
+}
+.accordion_title {
+    padding: 13px 0px;
+    margin: 0px;
+    font-size: 17px;
+    font-weight: 500; 
+ 
+} 
+.accordion_title i {
+    font-size: 20px; 
+    padding: 0px 15px;
+} 
+.accordion_item_content  {
+    display: flex;
+    padding: 10px 15px;
+}
+.accordion_item_content_text {
+    width: 70%;
+} 
+
+.accordion_content_image {
+    height: 200px;
+    width: 30%;
+    overflow: hidden; 
+    margin: -30px 40px 0px 0px;
+ 
+} 
+.accordion_content_image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+    object-position: center;
+}
+.accordion_item:hover .accordion_item_content {
+background-color: #0E873F;
+ display: block;
+}
+.page_content_image img {
+    height: 100%;
+    width: 100%;
+}
+.accordion_content_image {}
+/*  height: 100px;
+    width: 36%;
+    overflow: hidden;
+    margin: 0px 40px 0px 0px; */
