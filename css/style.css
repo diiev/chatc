@@ -2263,6 +2263,8 @@ p {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #000;
+    transition: all .3s;
+    cursor: pointer;
 }
 .accordion_item i {
     padding: 0px 15px;
@@ -2299,9 +2301,9 @@ p {
     object-fit: cover; 
     object-position: center;
 }
-.accordion_item:hover .accordion_item_content {
+.accordion_item:hover  {
 background-color: #0E873F;
- display: block;
+color: #fff;
 }
 .page_content_image img {
     height: 100%;
