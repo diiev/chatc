@@ -2395,9 +2395,13 @@ p {
     margin: 0;
     font-size: 23px;
     font-weight: 500;
-    padding: 0px 0px 20px 0px;
+    padding: 0px 0px 6px 0px;
+    margin: 0px 0px 20px 0px;
+    border-bottom:  1px dotted #000;
 }
-
+.block_info_content p {
+    display: block;
+}
 .block_image {
     width: 200px;
     height: 250px;
@@ -2406,11 +2410,6 @@ p {
     border-radius: 10%;
 
 }
-
-.block_image:hover img {
-    filter: brightness(0.7);
-}
-
 .block_image img {
     height: 100%;
     width: 100%;
@@ -2448,6 +2447,7 @@ p {
     }
 
     .block_image {
+        height: 160px;
         margin: 0 auto;
     }
 }
