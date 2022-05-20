@@ -152,10 +152,10 @@ if (isMobile.iOS()) {
     quoter_slider.classList.add('ios');
     search_icon.classList.add('search_icon_ios');
 }
-// кнопка навверх 
+// кнопка навверх  
 $(function () {
   $(window).scroll(function () {
-    if ($(this).scrollTop() > 2000 ) {
+    if ($(this).scrollTop() != 0 ) {
       $('.top_arrow').fadeIn();
     } else {
       $('.top_arrow').fadeOut();
