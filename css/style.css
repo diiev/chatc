@@ -546,15 +546,11 @@ p {
 }
 
 .social_btns_icon {
-    width: 27px;
+    height: 23px;
     transition: all .3s;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     margin: 4px 0px 0px 0px;
-}
-
-.social_btns_icon_telegram {
-    width: 24px;
 }
 
 .button_icons:hover .social_btns_icon {
@@ -1307,12 +1303,10 @@ p {
     }
 
     .social_btns_icon {
-        width: 24px;
+       height: 20px;
     }
 
-    .social_btns_icon_telegram {
-        width: 22px;
-    }
+
 
     .menu_header_top ul {
         display: flex;
@@ -1571,7 +1565,7 @@ p {
     }
 
     .social_btns_icon {
-        width: 20px;
+       height: 18px;
     }
 
     .social_btns_icon_telegram {
