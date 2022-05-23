@@ -1192,6 +1192,7 @@ p {
     width: 50px;
     border-radius: 10px;
     cursor: pointer;
+    z-index: 99;
 }
 
 .top_arrow .angle {
@@ -1516,7 +1517,10 @@ p {
         height: 35px;
         width: 35px;
     }
-
+   
+   .angle {
+       border-width: 1px;
+   }
     .top_arrow .angle {
         width: 8px;
         height: 8px;
@@ -2610,7 +2614,6 @@ p {
 
 .pedsostav_title {
     text-align: center;
-    padding: 20px 0px;
 }
 .table {
     padding: 20px 0px;
