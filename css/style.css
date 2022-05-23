@@ -443,7 +443,7 @@ a {
 }
 
 a:visited {
-    color: transparent;
+    color: #000;
 }
 
 a:hover {
@@ -2455,7 +2455,9 @@ p {
 /* struktura_i_organi */
 .page_content_title {
     color: #000;
-    font-size: 24px;
+    font-size: 30px;
+    font-weight: 400;
+    padding: 0px 0px 15px 0px;
 }
 
 .page_content_text {
@@ -2603,4 +2605,48 @@ p {
         width: 50%;
         margin: 0 auto;
     }
+} 
+/* rukovodstvo.html */
+
+.pedsostav_title {
+    text-align: center;
+    padding: 20px 0px;
+}
+.table {
+    padding: 20px 0px;
+}
+table {
+    width: 99%;
+    margin: 0 auto;
+    text-align: center;
+    line-height:1.7em;
+    min-width: 1024px;
+    overflow: scroll;
+}
+.table_head {
+    color:  #fff;
+    background-color: #004448;
+} 
+.table_head th {
+    font-weight: 500;
+}
+.table_head th, 
+.table_rows td {
+    border: 1px solid #BCBDBD;
+}
+
+th, 
+.table_columns {
+  padding: 10px;
+}
+.table_rows {
+    background-color: #FFFFFB;
+}
+.table_rows:nth-child(even) {
+    background-color: #fff;
+}
+.table_rows:hover {
+    background-color: #0E873F;
+    color: #fff;
+    cursor: pointer;
 }
