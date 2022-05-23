@@ -2616,15 +2616,16 @@ p {
     text-align: center;
 }
 .table {
-    padding: 20px 0px;
+    padding: 0px 0px 20px 0px;
+
 }
 table {
     width: 99%;
     margin: 0 auto;
     text-align: center;
     line-height:1.7em;
-    min-width: 1024px;
     overflow: scroll;
+    font-size: 17px;
 }
 .table_head {
     color:  #fff;
@@ -2656,10 +2657,32 @@ th,
 @media (max-width:1023px) {
     table {
         font-size: 14px;
+        display: block;
     }
 }
 @media (max-width:767px) {
     table {
         font-size: 12px;
+    }
+}
+
+.docs_table {
+    text-align: justify;
+    display: table;
+
+} 
+.osn_docs 
+{
+ background-color: #63132C;
+} 
+.table_head_icon {
+    margin: 0px 10px -4px 0px;
+    height: 22px;
+    fill: #fff !important;
+}
+
+@media (max-width:1023px) {
+    .table_head_icon {
+        height: 19px;
     }
 }
