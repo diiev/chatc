@@ -2650,3 +2650,13 @@ th,
     color: #fff;
     cursor: pointer;
 }
+@media (max-width:1023px) {
+    table {
+        font-size: 14px;
+    }
+}
+@media (max-width:767px) {
+    table {
+        font-size: 12px;
+    }
+}
