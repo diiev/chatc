@@ -2169,7 +2169,7 @@ p {
     padding-right: 5px;
 }
 
-.kafedra_info {
+.employee_block {
     margin-top: 20px;
     border: 1px solid #0E873F;
     padding: 20px;
@@ -2177,12 +2177,12 @@ p {
 
 }
 
-.kafedra_info p {
+.employee_block p {
     display: block;
     padding: 15px 0px;
 }
 
-.kafedra_image {
+.employee_block_image {
     height: 150px;
     width: 150px;
     border: 1px solid #0E873F;
@@ -2192,7 +2192,7 @@ p {
 
 }
 
-.kafedra_image img {
+.employee_block_image img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -2200,7 +2200,7 @@ p {
 
 }
 
-.zavkaf_name {
+.employee_block_name {
     font-size: 22px;
     color: #0E873F;
     font-weight: 500;
@@ -2208,17 +2208,17 @@ p {
     margin: 0;
 }
 
-.kafedra_name {
+.employee_block_department {
     font-size: 16px;
     text-align: center;
 }
 
-.kafedra_email {
+.employee_block_email {
     font-size: 14px;
     padding: 15px 0px;
 }
 
-.kafedra_email_icon {
+.employee_block_email_icon {
     height: 15px;
     width: 15px;
     margin: 0px 5px -2px 0px;
@@ -2227,7 +2227,7 @@ p {
     -moz-transition: all .3s;
 }
 
-.kafedra_email:hover .kafedra_email_icon {
+.employee_block_email:hover .employee_block_email_icon {
     fill: #0E873F !important;
 }
 
@@ -2294,20 +2294,20 @@ p {
         font-size: 14px;
     }
 
-    .kafedra_image {
+    .employee_block_image {
         height: 100px;
         width: 100px;
     }
 
-    .zavkaf_name {
+    .employee_block_name {
         font-size: 18px;
     }
 
-    .kafedra_name {
+    .employee_block_department {
         font-size: 14px;
     }
 
-    .kafedra_email {
+    .employee_block_email {
         font-size: 12px;
     }
 
@@ -2340,20 +2340,20 @@ p {
         font-size: 14px;
     }
 
-    .kafedra_image {
+    .employee_block_image {
         height: 100px;
         width: 100px;
     }
 
-    .zavkaf_name {
+    .employee_block_name {
         font-size: 16px;
     }
 
-    .kafedra_name {
+    .employee_block_department {
         font-size: 13px;
     }
 
-    .kafedra_email {
+    .employee_block_email {
         font-size: 11px;
     }
 
@@ -2685,4 +2685,27 @@ th,
     .table_head_icon {
         height: 19px;
     }
+}
+
+/* leftaside */
+ .page_aside {
+     width: 30%;
+     padding: 20px
+     
+ }
+.page_side_content {
+    width: 70%;
+    padding: 35px 20px;
+}
+.table_aside {
+    padding: 25px 0px;
+}
+@media (max-width:1023px) {
+    .page_aside,
+    .page_side_content {
+        width: 100%;
+        padding: 0px;
+        
+    }
+  
 }
