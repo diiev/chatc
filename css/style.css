@@ -703,10 +703,7 @@ p {
     -webkit-transition: .3s all ease 0s;
     -moz-transition: .3s all ease 0s;
 }
-.menu__list:last-child  {
-   
-    background-color: #63132C;
-}
+
 .width_menu {
     width: 250px;
 }
