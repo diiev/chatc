@@ -26,6 +26,7 @@ $('.slider').slick({
   autoplay: true,
   autoplaySpeed: 3000,
   dots: true,
+  infinite: false,
   lazyLoad: 'progressive',
   responsive: [{
       breakpoint: 1024,
