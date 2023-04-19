@@ -1,0 +1,244 @@
+.page_side_content p,
+.speciality_text p {
+    font-size: 17px
+}
+
+
+.content {
+    padding: 30px 0;
+    display: flex;
+    min-height: 400px
+}
+
+.single_post_content {
+    width: 70%;
+    padding: 0 50px 0 0;
+    min-height: 400px
+}
+
+.posts_aside {
+    width: 30%
+}
+.single_post_title {
+    color: #000;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 1.5em;
+    padding: 10px 0
+}
+
+.single_post_info {
+    border-top: 1px dotted #afafaf;
+    border-bottom: 1px dotted #afafaf;
+    padding: 15px 0
+}
+
+.single_post_info p {
+    font-size: 16px;
+    margin: 0 5px
+}
+
+.post_icon {
+    height: 16px;
+    margin: 0 5px -2px 0;
+    opacity: .8
+}
+
+.single_post_info .views {
+    opacity: .8
+}
+
+.single_post_image {
+    padding: 20px 0
+}
+
+.single_post_image img {
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgb(0 0 0 / 50%);
+    width: 100%;
+    max-height: 100%
+}
+
+.single_post_text {
+    padding: 15px 5px;
+    text-align: justify
+}
+
+.single_post_text p {
+    line-height: 2;
+    font-size: 17px
+}
+
+.single_post_gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between
+}
+
+.single_post_gallery a {
+    width: 49.5%;
+    overflow: hidden;
+    padding: 5px 0;
+}
+
+.single_post_gallery a:hover img {
+    filter: brightness(.6)
+}
+
+.single_post_gallery img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s
+}
+
+.single_post_video iframe,
+.single_post_video video {
+    padding: 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 500px
+}
+
+.posts_aside {
+    padding: 10px
+}
+
+.posts_aside_title {
+    font-size: 18px;
+    text-align: left;
+    font-weight: 500;
+    padding: 10px 0
+}
+
+.post_aside_block {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px
+}
+
+.post_aside_content,
+.post_aside_image {
+    width: 50%;
+    height: 150px;
+    overflow: hidden
+}
+
+.post_aside_image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s
+}
+
+.post_aside_content_title {
+    color: #000;
+    font-size: 11px;
+    line-height: 1.5;
+    margin: 0;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s
+}
+
+.post_aside_content_text {
+    font-size: 10px
+}
+
+.posts_aside_link:hover {
+    color: #000
+}
+
+.posts_aside_link:hover .post_aside_image img {
+    filter: brightness(.7)
+}
+
+.posts_aside_link:hover .post_aside_content_title {
+    color: #0e873f
+}
+
+.logo_border {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 20px
+}
+
+.left_border,
+.right_border {
+    height: 1px;
+    background-color: #0e873f;
+    width: 50%
+}
+
+.border_img {
+    height: 25px;
+    width: 25px;
+    margin: 0 5px
+}
+
+.btn_prev_next {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 50px 0
+}
+
+.next {
+    text-align: right;
+    width: 50%;
+    border-left: 1px solid #0e873f;
+    min-height: 80px
+}
+
+.prev {
+    width: 50%;
+    min-height: 80px
+}
+
+.next_title,
+.prev_title {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 18px;
+    max-width: 100%;
+    cursor: pointer
+}
+
+.next .angle,
+.prev .angle {
+    height: 9px;
+    width: 9px;
+    margin: 0
+}
+
+.next_post_title,
+.prev_post_title {
+    display: block;
+    font-size: 15px
+}
+
+.pagination.mobile {
+    display: none
+}
+.ya-share2__container_size_l .ya-share2__badge .ya-share2__icon {
+    height: 40px !important;
+    width: 40px !important;
+    background-repeat: no-repeat !important;
+    background-size: 32px 32px !important;
+    background-position: center !important
+}
+
+.ya-share2 {
+    padding: 10px 0
+}
+
+.ya-share2__container.ya-share2__container_color-scheme_blackwhite .ya-share2__badge,
+.ya-share2__container.ya-share2__container_color-scheme_blackwhite .ya-share2__mobile-popup-badge {
+    background-color: #004448 !important
+}

@@ -1,0 +1,43 @@
+---
+layout: default
+title: Новости
+---
+
+<div class = "page_header">
+    <div class="container">
+	<h2 class="page_title">НОВОСТИ "ЧЕЧЕНСКОГО АГРАРНО-ТЕХНИЧЕСКОГО КОЛЛЕДЖА"</h2>
+    </div>   
+</div>
+
+    	<div class="container">
+    <div class= "content search_content"> 
+
+
+       <div class="posts">
+            <div class="post_img">
+				<a href ="<?php the_permalink(); ?>"><img loading="lazy" src="<?php the_post_thumbnail_url('thumbnail'); ?>"
+                    alt="<?php the_title(); ?>"></a>
+				</div>
+            <div class="post_content">
+                <div class="post_content_title">
+                    <h3><a href="<?php the_permalink();?>"> Lorem ?></a></h3>
+                </div>
+                <div class="post_content_data">
+                    <img class="post_content_data_icon img-svg"
+                        src="<?php echo esc_url( get_template_directory_uri());?>/assets/img/icons/calendar-alt-regular.svg"
+                        alt="<?php the_title(); ?>">
+                    <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+                <div class="post_content_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, iste placeat quam odio quidem adipisci tempora! Dolores quod autem eaque. Distinctio id sint hic, vitae odio quos necessitatibus laborum quae. ?></div>
+                <div class="post_content_read_more"><a href="<?php the_permalink();?>">Подробнее</a></div>
+            </div>
+        </div>
+
+
+        <div class="posts_btn_prev_next">
+
+        </div>  
+
+          
+	</div>  
+		</div>

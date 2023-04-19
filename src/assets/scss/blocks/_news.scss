@@ -1,0 +1,84 @@
+.news {
+    padding-bottom: 40px
+}
+
+.posts {
+    display: flex;
+    margin-bottom: 40px;
+    box-shadow: -2px 1px 6px 2px #f7eaea;
+    height: 290px
+}
+
+.post_img {
+    overflow: hidden;
+    width: 33%;
+    max-height: 100%
+}
+
+.post_img img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+    transition: 1.5s all;
+    -webkit-transition: 1.5s all;
+    -moz-transition: 1.5s all
+}
+
+.posts:hover img {
+    transform: scale(1.1)
+}
+
+.post_content {
+    padding: 0 15px 0 15px;
+    max-width: 65%;
+    position: relative
+}
+
+.post_content_data p {
+    font-size: 16px;
+    padding-bottom: 10px
+}
+
+.post_content_text p {
+    font-size: 17px
+}
+
+.post_content_data_icon {
+    height: 16px;
+    width: 16px;
+    margin: 0 1px -1px 0
+}
+
+.post_content_read_more {
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s
+}
+
+.posts_btn_prev_next {
+    position: absolute;
+    right: 15px
+}
+
+.post_content_title h3 {
+    font-size: 21px;
+    margin: 15px 0
+}
+
+.next_icon,
+.prev_icon {
+    height: 30px;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    fill: #020725BA
+}
+
+.posts_btn_prev_next a:hover .next_icon,
+.posts_btn_prev_next a:hover .prev_icon {
+    fill: #0E873F
+}

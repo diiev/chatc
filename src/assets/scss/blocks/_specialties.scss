@@ -1,0 +1,97 @@
+
+.slider {
+    padding: 10px 25px
+}
+
+.item_slider {
+    width: 300px;
+    overflow: hidden;
+    padding: 0 10px;
+    display: none
+}
+
+.item_slider img {
+    overflow: hidden;
+    object-fit: cover;
+    height: 210px;
+    width: 100%;
+    transition: .5s all;
+    -moz-transition: all .5s;
+    -webkit-transition: all .5s
+}
+
+.item_slider:hover img {
+    transform: scale(1.02)
+}
+
+.spec {
+    text-align: center;
+    font-size: 17px;
+    font-weight: 400
+}
+
+.speciality_aside {
+    width: 30%;
+    padding: 20px
+}
+
+.speciality_content {
+    width: 70%
+}
+
+.speciality_image img {
+    box-shadow: 0 0 0 0 rgb(0 0 0 / 0%);
+    border-radius: 0
+}
+
+.speciality_info {
+    background-color: #f5f5F58F;
+    box-sizing: border-box;
+    padding: 20px
+}
+
+.speciality_info p {
+    font-size: 16px;
+    display: block;
+    line-height: 1.7em;
+    padding-top: 5px
+}
+.speciality_text p {
+    line-height: 2em;
+    text-align: justify
+}
+
+.another_speciality {
+    padding: 20px
+}
+
+.another_speciality_title {
+    color: #000;
+    font-size: 21px;
+    font-weight: 400
+}
+
+.another_speciality_list a {
+    font-size: 15px;
+    margin-top: 5px
+}
+
+.speciality_list {
+    padding: 10px 0
+}
+
+.speciality_list li {
+    padding: 5px 0
+}
+
+.speciality_list a {
+    font-size: 18px
+}
+.form_education_title,
+.kcp_title,
+.period_education_title,
+.qualification_title {
+    color: #0e873f;
+    font-weight: 600;
+    padding-right: 5px
+}

@@ -1,0 +1,44 @@
+.quoter {
+    background-image: url('../img/bg_grozny.webp');
+    padding: 100px 0;
+    background-attachment: fixed;
+    position: relative;
+    background-position: center;
+    background-size: cover
+}
+
+.quoter_slider {
+    padding: 15px
+}
+
+.item_quoter_slider img {
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: top;
+    margin: 0 auto;
+    height: 150px;
+    width: 150px
+}
+
+.item_quoter_slider>p {
+    display: block;
+    padding-top: 20px;
+    text-align: center;
+    font-weight: 500;
+    font-style: italic
+}
+
+.quote {
+    font-size: 30px;
+    color: #fff
+}
+
+.author {
+    font-size: 28px;
+    color: #fff
+}
+
+.position {
+    font-size: 25px;
+    color: #55f3ca
+}

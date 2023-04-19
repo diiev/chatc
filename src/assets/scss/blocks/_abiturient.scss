@@ -1,0 +1,52 @@
+
+.abit_title {
+    color: #922323;
+    padding: 40px 0 !important;
+    text-align: center !important;
+    font-size: 45px !important;
+    font-weight: 300 !important
+}
+
+.abit_slang_text {
+    color: #b00000;
+    font-weight: 600
+}
+
+.result_priem_kol {
+    text-align: center
+}
+
+.result_priem_kol p {
+    font-size: 25px
+}
+
+.result_priem {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0
+}
+
+.block_count p {
+    font-size: 25px;
+    display: block;
+    text-align: center
+}
+
+.counter {
+    font-size: 45px;
+    display: block;
+    padding: 10px 0;
+    color: #0e873f
+}
+
+.result_prikazi p,
+.result_spiski p {
+    font-size: 25px;
+    text-align: justify
+}
+
+.result_prikazi ul li,
+.result_spiski ul li {
+    margin: 10px 0
+}
+
