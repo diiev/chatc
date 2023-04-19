@@ -1,15 +1,17 @@
-.header_middle_flex,
-.header_top_flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    justify-items: center
+.header {
+    &__top {
+        background-color: #f6f9fc;
+        padding: 10px
+    }
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        justify-items: center
+    }
 }
 
-.header_top {
-    background-color: #f6f9fc;
-    padding: 10px
-}
+
 
 .search_head {
     border: none;
