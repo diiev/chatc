@@ -122,6 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (otherItem !== item) {
           otherItem.classList.remove('active');
           otherItem.nextElementSibling.classList.remove('accordion_item_active');
+         
         }
       });
     });
