@@ -1,0 +1,112 @@
+.employee_block {
+    margin-top: 20px;
+    border: 1px solid #0e873f;
+    padding: 20px;
+    text-align: center
+}
+
+.employee_block p {
+    display: block;
+    padding: 15px 0
+}
+
+.employee_block_image {
+    height: 150px;
+    width: 150px;
+    border: 1px solid #0e873f;
+    overflow: hidden;
+    border-radius: 100%;
+    margin: 0 auto
+}
+
+.employee_block_image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover
+}
+
+.employee_block_name {
+    font-size: 22px;
+    color: #0e873f;
+    font-weight: 500;
+    padding: 15px 0;
+    margin: 0
+}
+
+.employee_block_department {
+    font-size: 16px;
+    text-align: center
+}
+
+.employee_block_email {
+    font-size: 16px
+}
+
+.employee_block_email_icon {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px -2px 0;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s
+}
+
+.employee_block_email:hover .employee_block_email_icon {
+    fill: #0E873F !important
+}
+
+
+.content_block {
+    box-shadow: 0 0 5px 0 rgb(0 0 0 / 50%);
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding: 15px 15px 15px 15px;
+    display: flex;
+    justify-content: space-between
+}
+
+.block_info {
+    width: 80%;
+    padding: 10px
+}
+
+.block_info_title {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    font-size: 23px;
+    font-weight: 500;
+    padding: 0 0 6px 0;
+    margin: 0 0 20px 0;
+    border-bottom: 1px dotted #000
+}
+
+.block_info_content {
+    padding: 0 20px 0 0
+}
+
+.block_info_content p {
+    text-align: start !important;
+    display: block;
+    margin: 10px 0;
+    font-size: 16px
+}
+
+.block_image {
+    width: 200px;
+    height: 250px;
+    overflow: hidden;
+    margin: 10px;
+    border-radius: 6px
+}
+
+.block_image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    cursor: pointer
+}

@@ -3,13 +3,14 @@
     background-color: rgba(0, 0, 0, .6);
     height: 100%;
     width: 100%;
-    top: 0
+    top: 0;
+    z-index: 0;
 }
 
 .slider_banner_item {
-    object-fit: cover;
+    position: relative;
     width: 100%;
-    max-height: 550px
+    height: 550px
 }
 
 .slider_banner_item img,
@@ -30,7 +31,10 @@
 
 .title_banner {
     position: absolute;
-    top: 30%
+    top: 50%;
+    z-index: 2;
+    transform:  translateY(-50%);
+    
 }
 
 .title_banner h1 {
@@ -38,7 +42,7 @@
     line-height: 1.5;
     text-align: center;
     font-size: 40px;
-    font-weight: 400
+    font-weight: 400;
 }
 .information_flex {
     display: flex;

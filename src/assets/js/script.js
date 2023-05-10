@@ -1,111 +1,70 @@
-"use strict"
-$('.slider_banner').slick({
-  dots: false,
-  infinite: true,
-  speed: 500,
-  fade: true,
-  cssEase: 'linear',
-  arrows: true,
-  responsive: [{
-      breakpoint: 1024,
-      settings: {
-        arrows: false
-      }
-    },
-    {
-      breakpoint: 767,
-      settings: {
-        arrows: false
+'use strict';
+
+  import { tns } from 'tiny-slider';
+  import 'fslightbox';
+  import  gos from './gos';
+
+document.addEventListener('DOMContentLoaded', () => {   
+  function isHomepage() {
+    const pathName = window.location.pathname;
+    if (pathName == '/' || pathName == '/index.html') {
+      return true;
+    } else {
+      return false; 
+    }
+  }
+  if (isHomepage()) { 
+
+    gos();
+ 
+
+  const sliderBanner = tns({
+    container: '.slider_banner',
+    items: 1,
+    nav: false
+  });
+
+  const sliderSpec = tns({
+    container: '.slider',
+    items: 1,
+    nav: true,
+    navPosition: 'bottom', 
+    responsive: {
+      500: {
+          items: 2
+      },
+     
+      900: {
+        items: 3
       }
     }
-  ]
+  });
+  const sliderQuoter = tns({
+    container: '.quoter_slider',
+    items: 1,
+    nav: true,
+    navPosition: 'bottom', 
+  });
 
-});
-$('.slider').slick({
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 3000,
-  dots: true,
-  infinite: true,
-  lazyLoad: 'progressive',
-  responsive: [{
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        arrows: false,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 767,
-      settings: {
-        slidesToShow: 2,
-        arrows: false,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 500,
-      settings: {
-        slidesToShow: 1,
-        arrows: false,
-        dots: true
+  const sliderLogo = tns({
+    container: '.logo_slider',
+    items: 1,
+    nav: true,
+    gutter: 10,
+    navPosition: 'bottom', 
+    responsive: {
+      500: {
+          items: 2
+      },
+     
+      900: {
+        items: 3
       }
     }
-  ]
-});
-
-$('.quoter_slider').slick({
-  slidesToShow: 1,
-  dots: true,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 3000,
-  lazyLoad: 'progressive',
-  responsive: [{
-    breakpoint: 1024,
-    settings: {
-      arrows: false
-    }
-  }]
+  }); 
+} 
 
 
-});
-
-$('.logo_slider').slick({
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  lazyLoad: 'progressive',
-  dots: true,
-  responsive: [{
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 2,
-        arrows: false
-      }
-    },
-    {
-      breakpoint: 767,
-      settings: {
-        slidesToShow: 2,
-        arrows: false
-      }
-
-    },
-    {
-      breakpoint: 500,
-      settings: {
-        slidesToShow: 1,
-        arrows: false,
-        dots: true
-      }
-    }
-
-  ]
-});
-
-document.addEventListener('DOMContentLoaded', () => {
   const accordion = document.querySelectorAll('.accordion_item'),
     burger = document.querySelector('.burger'),
     menu = document.querySelector('.menu'),
@@ -150,7 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
       return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
   };
-  burger.addEventListener('click', (e) => {
+  burger.addEventListener('click', (e) => { 
+    e.preventDefault();
     burger.classList.toggle('active');
     menu.classList.toggle('menu__active');
     document.body.classList.toggle('lock');
@@ -236,5 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (isMobile.iOS()) {
     quoter_slider.classList.add('ios');
     search_icon.classList.add('search_icon_ios');
-  }
-})
+  } 
+
+
+});

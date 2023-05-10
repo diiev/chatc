@@ -4,7 +4,8 @@
     background-attachment: fixed;
     position: relative;
     background-position: center;
-    background-size: cover
+    background-size: cover;
+    position: relative;
 }
 
 .quoter_slider {
@@ -15,9 +16,10 @@
     border-radius: 100%;
     object-fit: cover;
     object-position: top;
+    display: block;
     margin: 0 auto;
     height: 150px;
-    width: 150px
+    width: 150px;
 }
 
 .item_quoter_slider>p {

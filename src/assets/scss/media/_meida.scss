@@ -1,5 +1,5 @@
 @media (max-width:1130px) {
-    .menu_header_top ul {
+    .header__top-menu ul {
         gap: 10px
     }
 
@@ -89,7 +89,7 @@
         height: 20px
     }
 
-    .menu_header_top ul {
+    .header__top-menu ul {
         display: flex;
         flex-direction: column
     }
@@ -560,7 +560,7 @@
         font-size: 13px
     }
 
-    .header_top_flex {
+    .header__container {
         justify-content: center;
         flex-direction: column;
         align-items: center
@@ -571,7 +571,7 @@
         padding-top: 10px
     }
 
-    .menu_header_top ul {
+    .header__top-menu ul {
         align-items: center
     }
 
