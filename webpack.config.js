@@ -6,12 +6,12 @@ module.exports = {
   mode: 'production',
   entry: './src/assets/js/script.js',
   output: {
-    filename: 'scripts.min.js',
-    path: __dirname + '/src/assets/js' + '/'
+    filename: 'script.js',
+    path: __dirname + '/dist/assets/' + '/js'
   },
   watch: true,
 
-  devtool: "source-map",
+ devtool: "source-map",
 
   module: {
     rules: [

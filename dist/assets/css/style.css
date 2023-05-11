@@ -1932,6 +1932,10 @@ th {
     padding: 3px 0;
 }
 
+.noko {
+    font-size: 16px !important;
+}
+
 .page_side_content p,
 .speciality_text p {
     font-size: 17px;
@@ -2581,6 +2585,10 @@ th {
 }
 
 @media (max-width: 1023px) {
+    .noko {
+        font-size: 14px;
+    }
+
     .slider__prev, .slider__next {
         display: none;
     }
@@ -3523,5 +3531,9 @@ th {
     .tns-nav button {
         height: 8px;
         width: 8px;
+    }
+
+    .noko {
+        font-size: 13px;
     }
 }

@@ -9,7 +9,9 @@
 }
 
 @media (max-width:1023px) { 
-    
+    .noko {
+        font-size: 14px;
+    }
     .slider__prev, .slider__next {
         display: none;
     }
@@ -970,5 +972,7 @@
        
        
     }  
-
+    .noko {
+        font-size: 13px;
+    }
 }
