@@ -620,6 +620,11 @@ i {
     right: 15px;
 }
 
+.promo .slider__prev,
+.promo .slider__next {
+    opacity: 0;
+}
+
 .promo:hover .slider__prev {
     border-color: white;
     opacity: 0.5;

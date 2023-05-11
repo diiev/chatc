@@ -243,6 +243,10 @@
 }  
 
 .promo {
+    .slider__prev, 
+    .slider__next {
+        opacity: 0;
+    }
     &:hover {
         .slider__prev { 
             border-color: white;
