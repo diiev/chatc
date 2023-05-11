@@ -3,7 +3,7 @@
 let path = require('path');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './src/assets/js/script.js',
   output: {
     filename: 'scripts.min.js',
@@ -13,6 +13,9 @@ module.exports = {
 
   devtool: "source-map",
 
-  module: {}
+  module: {
+    rules: [
+     
+    ]
+  }
 };
-console.log(__dirname);

@@ -56,3 +56,143 @@
     text-align: justify
 }
 
+.page_content_image img {
+    height: 100%;
+    width: 100%
+}
+
+
+.pedsostav_title {
+    text-align: center
+}
+
+.table {
+    padding: 0 0 20px 0
+}
+
+table {
+    width: 99%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.7em;
+    overflow: scroll;
+    font-size: 17px
+}
+
+.table_head {
+    color: #fff;
+    background-color: #004448
+}
+
+.table_head th {
+    font-weight: 500
+}
+
+.table_head th,
+.table_rows td {
+    border: 1px solid #bcbdbd
+}
+
+.table_columns,
+th {
+    padding: 10px
+}
+
+.table_columns p {
+    font-size: 16px
+}
+
+.table_rows {
+    background-color: #fffffb
+}
+
+.table_rows:nth-child(even) {
+    background-color: #fff
+}
+
+.table_rows:hover {
+    background-color: #0e873f;
+    color: #fff;
+    cursor: pointer
+}
+
+.table_rows a {
+    transition: all 0s;
+    -webkit-transition: all 0s;
+    -moz-transition: all 0s;
+    display: block;
+    height: 100%;
+    width: 100%
+}
+
+.table_rows:hover a {
+    color: #fff
+}
+
+
+.docs_table {
+    text-align: justify;
+    display: table
+}
+
+.osn_docs {
+    background-color: #63132c
+}
+
+.table_head_icon {
+    margin: 0 10px -4px 0;
+    height: 22px;
+    fill: #fff !important
+}
+
+
+
+.page_aside {
+    width: 30%;
+    padding: 20px
+}
+
+.page_side_content {
+    width: 70%;
+    padding: 35px 20px
+}
+
+.page_side_content p {
+    text-align: justify
+}
+
+.table_aside {
+    margin: 20px 0;
+    text-align: left;
+    font-size: 15px
+}
+
+
+.nav-links {
+    margin: 0 auto;
+    text-align: center
+}
+
+.page-numbers {
+    padding: 10px;
+    margin-left: 5px
+}
+
+.page-numbers.current {
+    background-color: #0e873f;
+    color: #fff
+}
+
+.content_posts,
+.content_pages {
+    width: 50%
+}
+
+.content_sitemap {
+    display: flex;
+    gap: 50px
+}
+
+.list_sitemap {
+    padding: 3px 0
+}

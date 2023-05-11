@@ -14,10 +14,10 @@
        
       <!--header-->
       <header class="header">
-          <div class="header__top">
+          <div class="header_top">
               <div class="container">
-                  <div class="header__container">
-                      <nav class="header__top-menu">
+                  <div class="header_top_flex">
+                      <nav class="menu_header_top">
                           <ul>
                               <li class="menu_header_list">
                                   <a href=""><img class="menu_header_list_icon img-svg" src="assets/img/icons/clock-solid.svg"
@@ -70,7 +70,7 @@
           <!--  header_top -->
           <div class="header_middle">
               <div class="container">
-                  <div class="header__container">
+                  <div class="header_middle_flex">
                       <div class="logo">
                           <img loading="lazy" src="assets/img/logo.svg" height="80" width="80">
                       </div>
@@ -154,8 +154,8 @@
         
        <main class="page">
             
-                <section class="slider_banner">
-                 
+               <section class="promo">
+                <div class="slider_banner">
                      <div class="slider_banner_item">
                          <div class="overlay"></div>
                          <video src="assets/video/banner.mp4" autoplay muted loop></video>
@@ -169,10 +169,12 @@
                          <div class="title_banner">
                              <h1>МЕЧЕТЬ СЕРДЦЕ ЧЕЧНИ</h1>
                          </div>
-                     </div> 
-                  
+                     </div>
                      <!-- slider_banner  -->
-                 </section> 
+                 </div>   
+                 <i id="promo__slider-prev" class="slider__prev  angle-left"></i>
+                 <i id="promo__slider-next" class="slider__next  angle-right"></i>
+             </section>
                  <section class="information">
                      <div class="container">
                          <div class="information_flex">
@@ -352,8 +354,12 @@
                                      </h4>
                                  </a>
                              </div>
+                            
                          </div>
-                     </div>
+                         <i id="spec__slider-prev" class="slider__prev  angle-left"></i>
+                         <i id="spec__slider-next" class="slider__next  angle-right"></i>
+                     </div> 
+                     
                  </section>
                  <!-- our_spec -->
                  <section class="quoter">
@@ -374,6 +380,8 @@
                                  <p class="position"> Первый Президент Чеченской Республики</p>
                              </div>
                          </div>
+                         <i id="quoter__slider-prev" class="slider__prev  angle-left"></i>
+                         <i id="quoter__slider-next" class="slider__next  angle-right"></i>
                      </div>
                  </section>
                  <!-- quoter -->
@@ -400,6 +408,15 @@
                              <div class="item_logo_slider"> <a href=""><img loading="lazy" src="assets/img/WorldskillsLogo.jpg"
                                          alt="Вордскиллс">
                                  </a></div>
+                                 <div class="item_logo_slider"> <a href=""><img loading="lazy" src="assets/img/WorldskillsLogo.jpg"
+                                     alt="Вордскиллс">
+                             </a></div>
+                             <div class="item_logo_slider"> <a href=""><img loading="lazy" src="assets/img/WorldskillsLogo.jpg"
+                                 alt="Вордскиллс">
+                         </a></div>
+                         <div class="item_logo_slider"> <a href=""><img loading="lazy" src="assets/img/WorldskillsLogo.jpg"
+                             alt="Вордскиллс">
+                     </a></div>
                              <div class="item_logo_slider"><a href=""> <img loading="lazy" src="assets/img/SiteGlavandCRlogo.jpg"
                                          alt="Сайт Главы ЧР"></a> </div>
                              <div class="item_logo_slider"> <a href=""><img loading="lazy" src="assets/img/logogosuslugi.jpg"
@@ -409,7 +426,10 @@
                                          alt="Минисельхоз ЧР"></a>
                              </div>
                          </div>
-                     </div>
+                         <i id="links__slider-prev" class="slider__prev  angle-left"></i>
+                         <i id="links__slider-next"  class="slider__next  angle-right"></i>
+                     </div> 
+                    
                  </section>
           
            

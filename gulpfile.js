@@ -103,8 +103,8 @@ function css() {
         .pipe(browserSync.reload({stream: true}));
 }
 
-function js() {
-       return src(path.src.js, {base: srcPath + "assets/js/"})
+//function js() {
+      // return src(path.src.js, {base: srcPath + "assets/js/"})
 //         .pipe(plumber({
 //             errorHandler : function(err) {
 //                 notify.onError({
@@ -122,8 +122,8 @@ function js() {
 //             extname: ".js"
 //         }))
 //         .pipe(dest(path.build.js))
-    .pipe(browserSync.reload({stream: true}));
- }
+  //  .pipe(browserSync.reload({stream: true}));
+// }
 
 function images() {
     return src(path.src.images, {base: srcPath + "assets/img/"})
@@ -166,13 +166,13 @@ function clean() {
 function watchFiles() {
     gulp.watch([path.watch.html], html)
     gulp.watch([path.watch.css], css)
-     gulp.watch([path.watch.js], js)
+   //  gulp.watch([path.watch.js], js)
     gulp.watch([path.watch.images], images)
     gulp.watch([path.watch.fonts], fonts)
    // gulp.watch([path.watch.video], video)
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js,  images, webpImages, fonts,video))
+const build = gulp.series(clean, gulp.parallel(html, css,   images, webpImages, fonts,video))
 const watch = gulp.parallel(build, watchFiles, serve)
 
 

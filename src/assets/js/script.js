@@ -21,36 +21,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const sliderBanner = tns({
     container: '.slider_banner',
     items: 1,
-    nav: false
+    nav: false,
+    controls: false
   });
-
+  document.querySelector('#promo__slider-prev').addEventListener('click', () => {
+    sliderBanner.goTo('prev');
+  });
+  document.querySelector('#promo__slider-next').addEventListener('click', () => {
+    sliderBanner.goTo('next');
+  });
   const sliderSpec = tns({
     container: '.slider',
     items: 1,
     nav: true,
-    navPosition: 'bottom', 
-    responsive: {
-      500: {
-          items: 2
-      },
-     
-      900: {
-        items: 3
-      }
-    }
-  });
-  const sliderQuoter = tns({
-    container: '.quoter_slider',
-    items: 1,
-    nav: true,
-    navPosition: 'bottom', 
-  });
-
-  const sliderLogo = tns({
-    container: '.logo_slider',
-    items: 1,
-    nav: true,
-    gutter: 10,
+    controls: false,
     navPosition: 'bottom', 
     responsive: {
       500: {
@@ -62,8 +46,49 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }); 
-} 
+  document.querySelector('#spec__slider-prev').addEventListener('click', () => {
+    sliderSpec.goTo('prev');
+  });
+  document.querySelector('#spec__slider-next').addEventListener('click', () => {
+    sliderSpec.goTo('next');
+  });
+  const sliderQuoter = tns({
+    container: '.quoter_slider',
+    items: 1,
+    nav: true,
+    controls: false,
+    navPosition: 'bottom', 
+  });
+  document.querySelector('#quoter__slider-prev').addEventListener('click', () => {
+    sliderQuoter.goTo('prev');
+  });
+  document.querySelector('#quoter__slider-next').addEventListener('click', () => {
+    sliderQuoter.goTo('next');
+  });
+  const sliderLinks = tns({
+    container: '.logo_slider',
+    items: 1,
+    nav: true,
+    controls: false,
+    navPosition: 'bottom', 
+    responsive: {
+      500: {
+          items: 2
+      },
 
+      900: {
+        items: 3
+      }
+    }
+  });   
+  document.querySelector('#links__slider-prev').addEventListener('click', () => {
+    sliderLinks.goTo('prev');
+  });
+  document.querySelector('#links__slider-next').addEventListener('click', () => {
+    sliderLinks.goTo('next');
+  });
+  
+} 
 
   const accordion = document.querySelectorAll('.accordion_item'),
     burger = document.querySelector('.burger'),
@@ -200,3 +225,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 });
+

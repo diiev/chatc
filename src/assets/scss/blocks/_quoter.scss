@@ -1,6 +1,6 @@
 .quoter {
     background-image: url('../img/bg_grozny.webp');
-    padding: 100px 0;
+    padding: 100px 0 20px 0;
     background-attachment: fixed;
     position: relative;
     background-position: center;
@@ -8,10 +8,9 @@
     position: relative;
 }
 
-.quoter_slider {
-    padding: 15px
+.item_quoter_slider {
+    padding: 0 30px;
 }
-
 .item_quoter_slider img {
     border-radius: 100%;
     object-fit: cover;

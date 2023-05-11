@@ -8,6 +8,9 @@
     },
     "author": "Diiev Ramzan",
     "license": "ISC",
+    "browserslist": [
+        "> 1%"
+    ],
     "devDependencies": {
         "browser-sync": "^2.27.11",
         "del": "^6.1.1",
