@@ -3555,4 +3555,9 @@ th {
     .slider {
         padding: 10px 0px;
     }
+
+    .tns-nav button {
+        height: 8px;
+        width: 8px;
+    }
 }
