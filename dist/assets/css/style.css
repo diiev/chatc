@@ -365,7 +365,6 @@ table {
 
 input {
     -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
 }
 
@@ -1061,11 +1060,9 @@ a:hover .angle {
 
 .slider_banner_item img,
 .slider_banner_item video {
-    -o-object-fit: cover;
     object-fit: cover;
     width: 100%;
     height: 100%;
-    -o-object-position: center;
     object-position: center;
 }
 
@@ -1295,9 +1292,7 @@ a:hover .angle {
 }
 
 .post_img img {
-    -o-object-fit: cover;
     object-fit: cover;
-    -o-object-position: center;
     object-position: center;
     height: 100%;
     width: 100%;
@@ -1376,7 +1371,6 @@ a:hover .angle {
 
 .item_slider img {
     overflow: hidden;
-    -o-object-fit: cover;
     object-fit: cover;
     height: 210px;
     width: 100%;
@@ -1479,9 +1473,7 @@ a:hover .angle {
 
 .item_quoter_slider img {
     border-radius: 100%;
-    -o-object-fit: cover;
     object-fit: cover;
-    -o-object-position: top;
     object-position: top;
     display: block;
     margin: 0 auto;
@@ -1527,12 +1519,10 @@ a:hover .angle {
     max-width: 360px;
     overflow: hidden;
     max-height: 300px;
-    -o-object-fit: cover;
     object-fit: cover;
 }
 
 .gallery_img img {
-    -o-object-fit: cover;
     object-fit: cover;
     transition: 1.5s all;
     -webkit-transition: 1.5s all;
@@ -2030,7 +2020,6 @@ th {
 }
 
 .single_post_gallery img {
-    -o-object-fit: cover;
     object-fit: cover;
     height: 100%;
     width: 100%;
@@ -2074,9 +2063,7 @@ th {
 .post_aside_image img {
     height: 100%;
     width: 100%;
-    -o-object-fit: cover;
     object-fit: cover;
-    -o-object-position: center;
     object-position: center;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
@@ -2376,9 +2363,7 @@ th {
 .accordion_content_image img {
     height: 100%;
     width: 100%;
-    -o-object-fit: cover;
     object-fit: cover;
-    -o-object-position: center;
     object-position: center;
     border-radius: 5px;
 }
@@ -2444,7 +2429,6 @@ th {
 .employee_block_image img {
     height: 100%;
     width: 100%;
-    -o-object-fit: cover;
     object-fit: cover;
 }
 
@@ -2525,7 +2509,6 @@ th {
 .block_image img {
     height: 100%;
     width: 100%;
-    -o-object-fit: cover;
     object-fit: cover;
     display: block;
     transition: all 0.3s;
@@ -2585,25 +2568,6 @@ th {
 .button:hover .btn_icon path,
 .content_btn a:hover .btn_icon path {
     fill: #fff !important;
-}
-
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: block;
-    padding: 5px;
-    cursor: pointer;
-    color: transparent;
-    outline: 0;
-    border: none;
-    background: 0 0;
-    width: 18px;
-    height: 18px;
-    border-top: 4px solid #000;
-    border-right: 4px solid #000;
-    opacity: 0.5;
-    transition: all 0.3s;
 }
 
 @media (max-width: 1130px) {

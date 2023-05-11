@@ -7,7 +7,7 @@ module.exports = {
   entry: './src/assets/js/script.js',
   output: {
     filename: 'scripts.min.js',
-    path: __dirname + '/dist/assets/' + '/js'
+    path: __dirname + '/src/assets/js' + '/'
   },
   watch: true,
 

@@ -51,22 +51,3 @@
     fill: #fff !important
 }
 
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: block;
-    padding: 5px;
-    cursor: pointer;
-    color: transparent;
-    outline: 0;
-    border: none;
-    background: 0 0;
-    width: 18px;
-    height: 18px;
-    border-top: 4px solid #000;
-    border-right: 4px solid #000;
-    opacity: .5;
-    transition: all .3s;
-
-}
