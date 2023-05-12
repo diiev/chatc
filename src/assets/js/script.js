@@ -7,7 +7,7 @@
 document.addEventListener('DOMContentLoaded', () => {   
   function isHomepage() {
     const pathName = window.location.pathname;
-    if (pathName == '/' || pathName == '/index.html') {
+    if (pathName == '/' || pathName == '/index.html' || pathName == 'https://diiev.github.io/chatc/dist/index.html') {
       return true;
     } else {
       return false; 
@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     gos();
  
-
   const sliderBanner = tns({
     container: '.slider_banner',
     items: 1,
@@ -33,7 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const sliderSpec = tns({
     container: '.slider',
     items: 1,
-    nav: true,
+    nav: false,
+    navContainer: '.dots',
     controls: false,
     navPosition: 'bottom', 
     responsive: {
@@ -45,13 +45,15 @@ document.addEventListener('DOMContentLoaded', () => {
         items: 3
       }
     }
-  }); 
+  });  
+
   document.querySelector('#spec__slider-prev').addEventListener('click', () => {
     sliderSpec.goTo('prev');
   });
   document.querySelector('#spec__slider-next').addEventListener('click', () => {
     sliderSpec.goTo('next');
-  });
+  }); 
+  setDotsSlider(sliderSpec, '.our_spec .container');
   const sliderQuoter = tns({
     container: '.quoter_slider',
     items: 1,
@@ -64,30 +66,74 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   document.querySelector('#quoter__slider-next').addEventListener('click', () => {
     sliderQuoter.goTo('next');
-  });
+  }); 
+  setDotsSlider(sliderQuoter, '.quoter .container');
   const sliderLinks = tns({
     container: '.logo_slider',
     items: 1,
-    nav: true,
     controls: false,
-    navPosition: 'bottom', 
+    lazyload: true,
+    navContainer: '.dots',
+    nav: false,
     responsive: {
       500: {
           items: 2
       },
 
       900: {
-        items: 3
+        items: 3,
+
       }
     }
   });   
+
+ 
   document.querySelector('#links__slider-prev').addEventListener('click', () => {
-    sliderLinks.goTo('prev');
+    sliderLinks.goTo('prev'); 
   });
-  document.querySelector('#links__slider-next').addEventListener('click', () => {
-    sliderLinks.goTo('next');
-  });
-  
+  document.querySelector('#links__slider-next').addEventListener('click', () => {  
+
+    sliderLinks.goTo('next');  
+  });   
+  setDotsSlider(sliderLinks, '.links .container');
+
+  function setDotsSlider (slider, section) {   
+    const container =  document.querySelector(section);
+    const dots = document.createElement('ul');
+    dots.classList.add('dots');
+    container.append(dots);
+    for (let i = 0; i <  slider.getInfo().slideCount; i++) { 
+      const dot = document.createElement('li');
+      dot.classList.add('dots__dot')
+      dots.append(dot);
+    }  
+    const dot = document.querySelectorAll(`${section} .dots__dot`);
+    dot[0].classList.add('dots__dot-active');
+    dot.forEach((item,i) => { 
+        item.addEventListener('click', ()=>{
+          slider.goTo(i); 
+              item.classList.add('dots__dot-active');
+              dot.forEach(otherItem => {
+                   if (otherItem != item) {
+                    otherItem.classList.remove('dots__dot-active')
+                   }
+              });
+            
+        });
+    });  
+     slider.events.on('indexChanged', (info)=> { 
+    dot.forEach((item,i) => { 
+      if (info.displayIndex == i + 1) {
+        item.classList.add('dots__dot-active');
+        dot.forEach(otherItem => {
+             if (otherItem != item) {
+              otherItem.classList.remove('dots__dot-active')
+             }
+        });
+      }
+    });
+    });
+  } 
 } 
 
   const accordion = document.querySelectorAll('.accordion_item'),

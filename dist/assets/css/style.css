@@ -568,6 +568,34 @@ i {
     opacity: 1;
 }
 
+.dots {
+    padding: 0px 0px 30px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.dots__dot {
+    margin: 0 5px;
+    height: 10px;
+    width: 10px;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    background: #000;
+    opacity: 0.5;
+    border-radius: 100%;
+}
+
+.dots__dot:hover {
+    opacity: 1;
+}
+
+.dots__dot-active {
+    opacity: 1;
+}
+
 .quoter .tns-nav {
     padding-top: 80px;
 }
@@ -650,7 +678,7 @@ i {
 }
 
 .links .slider__prev, .links .slider__next {
-    top: 53%;
+    top: 62%;
     opacity: 0.6;
 }
 
