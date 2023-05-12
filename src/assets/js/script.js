@@ -7,7 +7,7 @@
 document.addEventListener('DOMContentLoaded', () => {   
   function isHomepage() {
     const pathName = window.location.pathname;
-    if (pathName == '/' || pathName == '/index.html' || pathName == 'https://diiev.github.io/chatc/dist/index.html') {
+    if (pathName == '/' || pathName == '/index.html' || pathName == '/chatc/dist/index.html') {
       return true;
     } else {
       return false; 
