@@ -57,9 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const sliderQuoter = tns({
     container: '.quoter_slider',
     items: 1,
-    nav: true,
+    nav: false,
     controls: false,
-    navPosition: 'bottom', 
+    navContainer: '.dots', 
   });
   document.querySelector('#quoter__slider-prev').addEventListener('click', () => {
     sliderQuoter.goTo('prev');
@@ -86,8 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });   
-
- 
   document.querySelector('#links__slider-prev').addEventListener('click', () => {
     sliderLinks.goTo('prev'); 
   });
