@@ -166,39 +166,15 @@
     float: left
 }
 
-.tns-nav {
-    padding: 40px 0px;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    text-align: center; 
-    &-active {
-        opacity: 1 !important;
-    } 
-    button {
-        margin: 0 5px;
-         height: 10px;
-         width: 10px;
-         cursor: pointer;
-         border: 0;
-         outline: 0;
-         background: #000;
-         opacity: .5;
-         border-radius: 50%;
-        &:hover {
-            opacity: 1;
-        } 
-    }
-   
-   
-}  
+
 .dots { 
-    padding: 0px 0px 30px;
+    padding: 10px 0 30px 0;
     display: flex;
     justify-content: center;
     margin: 0 auto;
     text-align: center; 
     &__dot {
+        display: block;
         margin: 0 5px;
         height: 10px;
         width: 10px;
@@ -219,15 +195,18 @@
 
 }
 .quoter {
-    .tns-nav {
+    .dots {
         padding-top: 80px;
-        button {
+        &__dot {
              background: #fff;
              opacity: .5;
              border-radius: 50%;
             &:hover {
                 opacity: 1;
-            } 
+            }  
+            &-active {
+                opacity: 1;
+        }
     } 
    
 } 

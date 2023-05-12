@@ -540,36 +540,8 @@ i {
     float: left;
 }
 
-.tns-nav {
-    padding: 40px 0px;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.tns-nav-active {
-    opacity: 1 !important;
-}
-
-.tns-nav button {
-    margin: 0 5px;
-    height: 10px;
-    width: 10px;
-    cursor: pointer;
-    border: 0;
-    outline: 0;
-    background: #000;
-    opacity: 0.5;
-    border-radius: 50%;
-}
-
-.tns-nav button:hover {
-    opacity: 1;
-}
-
 .dots {
-    padding: 0px 0px 30px;
+    padding: 10px 0 30px 0;
     display: flex;
     justify-content: center;
     margin: 0 auto;
@@ -577,6 +549,7 @@ i {
 }
 
 .dots__dot {
+    display: block;
     margin: 0 5px;
     height: 10px;
     width: 10px;
@@ -596,17 +569,21 @@ i {
     opacity: 1;
 }
 
-.quoter .tns-nav {
+.quoter .dots {
     padding-top: 80px;
 }
 
-.quoter .tns-nav button {
+.quoter .dots__dot {
     background: #fff;
     opacity: 0.5;
     border-radius: 50%;
 }
 
-.quoter .tns-nav button:hover {
+.quoter .dots__dot:hover {
+    opacity: 1;
+}
+
+.quoter .dots__dot-active {
     opacity: 1;
 }
 
