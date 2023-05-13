@@ -540,7 +540,7 @@ i {
     float: left;
 }
 
-.dots {
+.sdots {
     padding: 10px 0 30px 0;
     display: flex;
     justify-content: center;
@@ -548,7 +548,7 @@ i {
     text-align: center;
 }
 
-.dots__dot {
+.sdots__dot {
     display: block;
     margin: 0 5px;
     height: 10px;
@@ -561,29 +561,29 @@ i {
     border-radius: 100%;
 }
 
-.dots__dot:hover {
+.sdots__dot:hover {
     opacity: 1;
 }
 
-.dots__dot-active {
+.sdots__dot-active {
     opacity: 1;
 }
 
-.quoter .dots {
+.quoter .sdots {
     padding-top: 80px;
 }
 
-.quoter .dots__dot {
+.quoter .sdots__dot {
     background: #fff;
     opacity: 0.5;
     border-radius: 50%;
 }
 
-.quoter .dots__dot:hover {
+.quoter .sdots__dot:hover {
     opacity: 1;
 }
 
-.quoter .dots__dot-active {
+.quoter .sdots__dot-active {
     opacity: 1;
 }
 
@@ -604,6 +604,7 @@ i {
     border-right: 0.23rem solid #000;
     display: inline-block;
     margin: 0 0 3px 6px;
+    opacity: 0.6;
     transition: all 0.3s;
     position: absolute;
     cursor: pointer;
@@ -1521,11 +1522,11 @@ a:hover .angle {
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
     justify-content: center;
 }
 
 .gallery_img {
+    margin: 5px;
     max-width: 360px;
     overflow: hidden;
     max-height: 300px;

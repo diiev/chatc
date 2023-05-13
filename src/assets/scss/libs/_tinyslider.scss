@@ -167,7 +167,7 @@
 }
 
 
-.dots { 
+.sdots { 
     padding: 10px 0 30px 0;
     display: flex;
     justify-content: center;
@@ -195,7 +195,7 @@
 
 }
 .quoter {
-    .dots {
+    .sdots {
         padding-top: 80px;
         &__dot {
              background: #fff;
@@ -227,6 +227,7 @@
     border-right: .23rem solid #000;
     display: inline-block;
     margin: 0 0 3px 6px;
+    opacity: .6;
     transition: all .3s;
     position: absolute;
     cursor: pointer;
