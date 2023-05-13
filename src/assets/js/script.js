@@ -1,9 +1,11 @@
 
 import { tns } from 'tiny-slider';
 import  gos from './gos';
- 
+import 'fslightbox'
+import lightbox  from './lightbox';
 
-document.addEventListener('DOMContentLoaded', () => {       
+document.addEventListener('DOMContentLoaded', () => {    
+  lightbox();
   function isHomepage() {
     const pathName = window.location.pathname;
     if (pathName == '/' || pathName == '/index.html' || pathName == '/chatc/dist/index.html') {
