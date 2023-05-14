@@ -646,7 +646,8 @@
     }
 
     .post_content_title h3 {
-        font-size: 16px
+        font-size: 16px;
+        overflow: hidden;
     }
 
     .post_content_read_more {
@@ -974,5 +975,14 @@
     }  
     .noko {
         font-size: 13px;
+    }
+}
+@media (max-width:417px) {  
+
+    .posts_btn_prev_next {
+        .prev.page-numbers, 
+        .next.page-numbers {
+            display: none;
+        }
     }
 }
