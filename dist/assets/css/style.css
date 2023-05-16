@@ -664,6 +664,15 @@ i {
     opacity: 1;
 }
 
+.imgpopup div span {
+    transition: all 0.3s;
+    opacity: 0.7;
+}
+
+.imgpopup div span:hover {
+    opacity: 1;
+}
+
 html, body {
     padding: 0;
     margin: 0;

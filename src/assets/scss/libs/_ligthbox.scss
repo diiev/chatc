@@ -1,0 +1,12 @@
+.imgpopup {
+    div {
+        span {
+            transition: all .3s;
+            opacity: 0.7;
+            &:hover {
+                opacity: 1;
+            }
+        } 
+
+    }
+}

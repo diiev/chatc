@@ -17,6 +17,7 @@ const del = require("del");
 const notify = require("gulp-notify")
 const imagewebp = require("gulp-webp")
 const browserSync = require("browser-sync").create();
+const webpack = require("webpack-stream");
 
 /* Paths */
 const srcPath = "src/"
@@ -103,27 +104,28 @@ function css() {
         .pipe(browserSync.reload({stream: true}));
 }
 
-// function js() {
-//     //   return src(path.src.js, {base: srcPath + "assets/js/"})
-//     //     .pipe(plumber({
-//     //         errorHandler : function(err) {
-//     //             notify.onError({
-//     //                 title:    "JS Error",
-//     //                 message:  "Error: <%= error.message %>"
-//     //             })(err);
-//     //             this.emit('end');
-//     //         }
-//     //     }))
-//     //     .pipe(rigger())
-//     //     .pipe(dest(path.build.js))
-//     //     .pipe(uglify())
-//     //     .pipe(rename({
-//     //         suffix: ".min",
-//     //         extname: ".js"
-//     //     }))
-//     //     .pipe(dest(path.build.js))
-// //    return pipe(browserSync.reload({stream: true}));
-// }
+function js() {
+   return    src(path.src.js, {base: srcPath + "assets/js/"})
+            .pipe(webpack({
+                mode: 'production',
+                entry: './src/assets/js/script.js',
+                output: {
+                  filename: 'script.js',
+                  path: __dirname + '/dist/assets/' + '/js'
+                },
+                watch: false,
+            
+               //devtool: "source-map",
+              
+                module: {
+                  rules: [
+                   
+                  ]
+                }
+            })) 
+            .pipe(dest(path.build.js))
+            .pipe(browserSync.reload({stream: true}));
+}
 
 function images() {
     return src(path.src.images, {base: srcPath + "assets/img/"})
@@ -166,13 +168,13 @@ function clean() {
 function watchFiles() {
     gulp.watch([path.watch.html], html)
     gulp.watch([path.watch.css], css)
- //   gulp.watch([path.watch.js], js)
+   gulp.watch([path.watch.js], js)
     gulp.watch([path.watch.images], images)
     gulp.watch([path.watch.fonts], fonts)
    // gulp.watch([path.watch.video], video)
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css,  images, webpImages, fonts,video))
+const build = gulp.series(clean, gulp.parallel(html, css, js, images, webpImages, fonts,video))
 const watch = gulp.parallel(build, watchFiles, serve)
 
 
@@ -180,7 +182,7 @@ const watch = gulp.parallel(build, watchFiles, serve)
 
 exports.html = html;
 exports.css = css;
-//exports.js = js
+exports.js = js
 exports.images = images;
 exports.webpImages = webpImages;
 exports.fonts = fonts;
