@@ -74,3 +74,19 @@
     transition: all .3s;
  }
 }
+
+@media (max-width: 767px) {
+    .popup {
+        &__img {
+          
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            transition: all .6s;
+            &-zomming {
+                transform: translateX(-50%) translateY(-50%) scale(1.4);
+            }
+        }
+    }
+    
+}

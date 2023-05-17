@@ -746,6 +746,19 @@ i {
     transition: all 0.3s;
 }
 
+@media (max-width: 767px) {
+    .popup__img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        transition: all 0.6s;
+    }
+
+    .popup__img-zomming {
+        transform: translateX(-50%) translateY(-50%) scale(1.4);
+    }
+}
+
 html, body {
     padding: 0;
     margin: 0;
