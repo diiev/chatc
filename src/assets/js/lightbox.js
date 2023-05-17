@@ -60,7 +60,8 @@ function lightbox () {
         if (e.code === 'Escape') {
             closeModal(popup);
         }
-    });
+    }); 
+
     function closeModal(modal) {
         document.body.style.paddingRight = '';
         document.body.style.overflow = '';
@@ -118,12 +119,7 @@ next.addEventListener('click', getNext);
 prev.addEventListener('click', getPrev); 
 
 img.addEventListener('touchstart', (e) => {
-    if (e.changedTouches > 500) {
-        getNext();
-    }
-    else {
-        getPrev();
-    }
+   
 });
 document.addEventListener('keydown', (e) => {
     if (e.code === 'ArrowRight') {
