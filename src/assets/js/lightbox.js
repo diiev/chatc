@@ -10,6 +10,10 @@ function lightbox () {
     const close = document.createElement('span');
     const fullscreen = document.createElement('span');
     const zoom = document.createElement('span');
+    const numberOfImg = document.createElement('div');
+    numberOfImg.classList.add('popup__numbers');
+    const currentNumber = document.createElement('span');
+    const allNumbers = document.createElement('span');
     const prev = document.createElement('i');
     const next = document.createElement('i');
     prev.classList.add('slider__prev');
@@ -31,12 +35,18 @@ function lightbox () {
         popup.append(img);
         popup.append(prev);
         popup.append(next);
+        popup.append(numberOfImg);
+       
         img.setAttribute('src', item.getAttribute('href'));  
         popup.append(popupButtons);
         popupButtons.append(fullscreen);
         popupButtons.append(zoom);
         popupButtons.append(close);
-        currentImg = i;
+        currentImg = i; 
+        numberOfImg.append(currentNumber);
+        numberOfImg.append(allNumbers)
+        currentNumber.innerHTML = `${currentImg + 1}`;
+        allNumbers.innerHTML = ` / ${imgs.length}`;
        }); 
     });  
     popup.addEventListener('click', (e) => {
@@ -95,11 +105,13 @@ function getNext () {
     if (currentImg >= +imgs.length - 1 )
     currentImg = -1;
        img.setAttribute('src', imgs[++currentImg].getAttribute('href'));
+       currentNumber.innerHTML = `${currentImg + 1}`;
 }
 function getPrev() {
     if (currentImg <=  0 )
     currentImg = +imgs.length;
    img.setAttribute('src', imgs[--currentImg].getAttribute('href')); 
+   currentNumber.innerHTML = `${currentImg + 1}`;
 } 
 
 next.addEventListener('click', getNext);
