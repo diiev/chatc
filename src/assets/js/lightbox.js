@@ -21,7 +21,7 @@ function lightbox () {
     close.setAttribute('data-close', '');
     zoom.setAttribute('data-zoom', '');
     fullscreen.innerHTML = '<svg width="22px" height="22px" viewBox="0 0 18 18"><path class="fslightbox-svg-path" d="M4.5 11H3v4h4v-1.5H4.5V11zM3 7h1.5V4.5H7V3H3v4zm10.5 6.5H11V15h4v-4h-1.5v2.5zM11 3v1.5h2.5V7H15V3h-4z"></path></svg>';
-    let countImg = 0;
+    let currentImg = 0;
     imgs.forEach((item,i) => {
        item.addEventListener('click', (e)=> { 
             e.preventDefault();
@@ -36,7 +36,7 @@ function lightbox () {
         popupButtons.append(fullscreen);
         popupButtons.append(zoom);
         popupButtons.append(close);
-          countImg = i;
+        currentImg = i;
        }); 
     });  
     popup.addEventListener('click', (e) => {
@@ -91,21 +91,35 @@ function lightbox () {
         closeModal(popup);
     });
 
-    next.addEventListener('click', ()=> { 
-        if (countImg >= +imgs.length - 1 )
-            countImg = -1;
-           img.setAttribute('src', imgs[++countImg].getAttribute('href'));
-           console.log(countImg);
-           console.log(+imgs.length-1);
-          
-      });
-   
-    prev.addEventListener('click', ()=> {
-        if (countImg <=  0 )
-        countImg = +imgs.length;
-       img.setAttribute('src', imgs[--countImg].getAttribute('href'));
-       console.log(countImg);
-       console.log(+imgs.length-1);
+function getNext () {
+    if (currentImg >= +imgs.length - 1 )
+    currentImg = -1;
+       img.setAttribute('src', imgs[++currentImg].getAttribute('href'));
+}
+function getPrev() {
+    if (currentImg <=  0 )
+    currentImg = +imgs.length;
+   img.setAttribute('src', imgs[--currentImg].getAttribute('href')); 
+} 
+
+next.addEventListener('click', getNext);
+prev.addEventListener('click', getPrev); 
+
+img.addEventListener('touchstart', (e) => {
+    if (e.changedTouches > 500) {
+        getNext();
+    }
+    else {
+        getPrev();
+    }
+});
+document.addEventListener('keydown', (e) => {
+    if (e.code === 'ArrowRight') {
+        getNext();
+    }
+    else if (e.code === 'ArrowLeft') {
+        getPrev();
+    }
 });
 }
 
