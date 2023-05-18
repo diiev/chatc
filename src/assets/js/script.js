@@ -19,8 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
       gos();
       slider();
     } 
-    
-   
     svg();
     new isvek.Bvi();  
     lightbox();

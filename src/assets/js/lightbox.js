@@ -30,6 +30,7 @@ function lightbox() {
         item.addEventListener('click', (e) => {
             e.preventDefault();
             currentScrollPos = window.scrollY;
+            document.body.style.paddingRight = '17px';
             document.body.style.overflow = 'hidden';
             document.body.append(popup);
             popup.append(img);
@@ -134,9 +135,8 @@ function lightbox() {
     function closeModal(modal) {
         img.classList.remove('popup__img-zomming');
         modal.remove();
-        setTimeout(() => {
-            document.body.style.overflow = '';
-        }, 400);
+        document.body.style.paddingRight = '';
+        document.body.style.overflow = '';
 
     }
     function getNext() {
