@@ -1,20 +1,19 @@
 
-
+import svg from './svg';
 import slider from './slider';
 import  gos from './gos';
-
-import 'fslightbox'
+import bvi from 'bvi';
 import lightbox  from './lightbox';
 
-document.addEventListener('DOMContentLoaded', () => {    
+document.addEventListener('DOMContentLoaded', () => {   
+  
   try {
+    svg();
+    new isvek.Bvi();  
     lightbox();
     gos();
     slider();
-  }
-    catch (e) {
-      console.log(e);
-    } 
+   
     const accordion = document.querySelectorAll('.accordion_item'),
       burger = document.querySelector('.burger'),
       menu = document.querySelector('.menu'),
@@ -114,42 +113,14 @@ document.addEventListener('DOMContentLoaded', () => {
   
     btnUp.addEventListener();
   
-    // svg
-    const imgElements = document.querySelectorAll('img.img-svg');
-    imgElements.forEach((img) => {
-      const imgClass = img.getAttribute('class');
-      const imgURL = img.getAttribute('src');
-  
-      fetch(imgURL)
-        .then((response) => response.text())
-        .then((data) => {
-          const parser = new DOMParser();
-          const svgElement = parser.parseFromString(data, 'image/svg+xml').querySelector('svg');
-  
-          if (typeof imgClass !== 'undefined') {
-            svgElement.setAttribute('class', `${imgClass} replaced-svg`);
-          }
-  
-          svgElement.removeAttribute('xmlns:a');
-  
-          if (!svgElement.getAttribute('viewBox') && svgElement.getAttribute('height') && svgElement.getAttribute('width')) {
-            svgElement.setAttribute('viewBox', `0 0 ${svgElement.getAttribute('height')} ${svgElement.getAttribute('width')}`);
-          }
-  
-          img.parentNode.replaceChild(svgElement, img);
-        });
-    });
-  
-  
-    // для ios
+      // для ios
     if (isMobile.iOS()) {
       quoter_slider.classList.add('ios');
       search_icon.classList.add('search_icon_ios');
     } 
-  
- 
-   
-
-
+  }
+  catch (e) {
+    console.log(e);
+  } 
 });
 

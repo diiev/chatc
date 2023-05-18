@@ -210,7 +210,7 @@ function Widget(src, opaId, isFz59) {
       openWidgetBtn.addEventListener('touchmove', function (e) {
   
         document.getElementById(ACTION_ID).classList.add(BLOCK_ACTION_CLASS); // предотвращаем экшен при скролле на лаптопах
-      });
+      }, {passive:true});
     }
   
     window.addEventListener('message', function (event) {

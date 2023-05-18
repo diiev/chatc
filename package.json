@@ -34,7 +34,7 @@
         "webpack-stream": "^7.0.0"
     },
     "dependencies": {
-        "fslightbox": "^3.4.1",
+        "bvi": "^1.0.2",
         "tiny-slider": "^2.9.4"
     }
 }

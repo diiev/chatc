@@ -1,162 +1,158 @@
 
-function lightbox () {
-    const imgs = document.querySelectorAll('[data-lightbox]');
+function lightbox() {
+    const imgs = document.querySelectorAll('[data-fslightbox]');
     const popup = document.createElement('div');
-    popup.classList.add('popup');
     const img = document.createElement('img')
-    img.classList.add('popup__img');
     const popupButtons = document.createElement('div');
-    popupButtons.classList.add('popup__btns');
     const close = document.createElement('span');
     const fullscreen = document.createElement('span');
     const zoom = document.createElement('span');
     const numberOfImg = document.createElement('div');
-    numberOfImg.classList.add('popup__numbers');
     const currentNumber = document.createElement('span');
     const allNumbers = document.createElement('span');
     const prev = document.createElement('i');
     const next = document.createElement('i');
+    let currentImg = 0;
+    let currentScrollPos = 0;
+    let x1 = null;
+    let y1 = null;
+    let isclick = false;
+    popup.classList.add('popup');
+    popupButtons.classList.add('popup__btns');
+    numberOfImg.classList.add('popup__numbers');
+    img.classList.add('popup__img');
     prev.classList.add('slider__prev');
     next.classList.add('slider__next');
-    zoom.innerHTML= `<svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" fill="white">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M5 10C5 7.23858 7.23858 5 10 5C12.7614 5 15 7.23858 15 10C15 11.381 14.4415 12.6296 13.5355 13.5355C12.6296 14.4415 11.381 15 10 15C7.23858 15 5 12.7614 5 10ZM10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17C11.5719 17 13.0239 16.481 14.1921 15.6063L19.2929 20.7071C19.6834 21.0976 20.3166 21.0976 20.7071 20.7071C21.0976 20.3166 21.0976 19.6834 20.7071 19.2929L15.6063 14.1921C16.481 13.0239 17 11.5719 17 10C17 6.13401 13.866 3 10 3ZM11 8C11 7.44772 10.5523 7 10 7C9.44772 7 9 7.44772 9 8V9H8C7.44772 9 7 9.44772 7 10C7 10.5523 7.44772 11 8 11H9V12C9 12.5523 9.44772 13 10 13C10.5523 13 11 12.5523 11 12V11H12C12.5523 11 13 10.5523 13 10C13 9.44772 12.5523 9 12 9H11V8Z" fill="white"/>
-    </svg>`;
-    close.innerHTML = '<svg width="22px" height="22px" viewBox="0 0 24 24"><path class="fslightbox-svg-path" d="M 4.7070312 3.2929688 L 3.2929688 4.7070312 L 10.585938 12 L 3.2929688 19.292969 L 4.7070312 20.707031 L 12 13.414062 L 19.292969 20.707031 L 20.707031 19.292969 L 13.414062 12 L 20.707031 4.7070312 L 19.292969 3.2929688 L 12 10.585938 L 4.7070312 3.2929688 z"></path></svg>'; 
-    close.setAttribute('data-close', '');
-    zoom.setAttribute('data-zoom', '');
-    fullscreen.innerHTML = '<svg width="22px" height="22px" viewBox="0 0 18 18"><path class="fslightbox-svg-path" d="M4.5 11H3v4h4v-1.5H4.5V11zM3 7h1.5V4.5H7V3H3v4zm10.5 6.5H11V15h4v-4h-1.5v2.5zM11 3v1.5h2.5V7H15V3h-4z"></path></svg>';
-    let currentImg = 0;
-    imgs.forEach((item,i) => {
-       item.addEventListener('click', (e)=> { 
+    zoom.innerHTML = `<svg  viewBox="0 0 512 512" height="18px" width="18px" fill="#fff"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM184 296c0 13.3 10.7 24 24 24s24-10.7 24-24V232h64c13.3 0 24-10.7 24-24s-10.7-24-24-24H232V120c0-13.3-10.7-24-24-24s-24 10.7-24 24v64H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h64v64z"/></svg>`;
+    close.innerHTML = '<svg  viewBox="0 0 384 512" height="26px" width="26px" fill="#fff"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>';
+    fullscreen.innerHTML = '<svg  viewBox="0 0 448 512" height="20px" width="20px" fill="#fff"><path d="M32 32C14.3 32 0 46.3 0 64v96c0 17.7 14.3 32 32 32s32-14.3 32-32V96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H32zM64 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7 14.3 32 32 32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H64V352zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32h64v64c0 17.7 14.3 32 32 32s32-14.3 32-32V64c0-17.7-14.3-32-32-32H320zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v64H320c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c17.7 0 32-14.3 32-32V352z"/></svg>';
+    imgs.forEach((item, i) => {
+        item.addEventListener('click', (e) => {
             e.preventDefault();
-        document.body.style.overflow = 'hidden';
-        document.body.append(popup);
-        popup.append(img);
-        popup.append(prev);
-        popup.append(next);
-        popup.append(numberOfImg);
-       
-        img.setAttribute('src', item.getAttribute('href'));  
-        popup.append(popupButtons);
-        popupButtons.append(fullscreen);
-        popupButtons.append(zoom);
-        popupButtons.append(close);
-        currentImg = i; 
-        numberOfImg.append(currentNumber);
-        numberOfImg.append(allNumbers)
-        currentNumber.innerHTML = `${currentImg + 1}`;
-        allNumbers.innerHTML = ` / ${imgs.length}`;
-       }); 
-    });  
+            currentScrollPos = window.scrollY;
+            document.body.style.overflow = 'hidden';
+            document.body.append(popup);
+            popup.append(img);
+            popup.append(prev);
+            popup.append(next);
+            popup.append(numberOfImg);
+            img.setAttribute('src', item.getAttribute('href'));
+            popup.append(popupButtons);
+            popupButtons.append(fullscreen);
+            popupButtons.append(zoom);
+            popupButtons.append(close);
+            currentImg = i;
+            numberOfImg.append(currentNumber);
+            numberOfImg.append(allNumbers)
+            currentNumber.innerHTML = `${currentImg + 1}`;
+            allNumbers.innerHTML = ` / ${imgs.length}`;
+        });
+    });
     popup.addEventListener('click', (e) => {
         if (e.target === popup) {
             closeModal(popup);
-           
         }
-    }); 
-
+    });
     document.addEventListener('keydown', (e) => {
         if (e.code === 'Escape') {
             closeModal(popup);
         }
-    }); 
+    });
+
+    fullscreen.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+            popup.requestFullscreen();
+            fullscreen.innerHTML = '<svg  viewBox="0 0 448 512" height="20px" width="20px" fill="#fff" ><path d="M160 64c0-17.7-14.3-32-32-32s-32 14.3-32 32v64H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c17.7 0 32-14.3 32-32V64zM32 320c-17.7 0-32 14.3-32 32s14.3 32 32 32H96v64c0 17.7 14.3 32 32 32s32-14.3 32-32V352c0-17.7-14.3-32-32-32H32zM352 64c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7 14.3 32 32 32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H352V64zM320 320c-17.7 0-32 14.3-32 32v96c0 17.7 14.3 32 32 32s32-14.3 32-32V384h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H320z"/></svg>';
+        }
+        else {
+            document.exitFullscreen();
+            fullscreen.innerHTML = '<svg  viewBox="0 0 448 512" height="20px" width="20px" fill="#fff"><path d="M32 32C14.3 32 0 46.3 0 64v96c0 17.7 14.3 32 32 32s32-14.3 32-32V96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H32zM64 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7 14.3 32 32 32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H64V352zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32h64v64c0 17.7 14.3 32 32 32s32-14.3 32-32V64c0-17.7-14.3-32-32-32H320zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v64H320c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c17.7 0 32-14.3 32-32V352z"/></svg>';
+        }
+    });
+    zoom.addEventListener('click', () => {
+        img.classList.toggle('popup__img-zomming')
+        if (isclick) {
+            isclick = false;
+            zoom.innerHTML = `<svg  viewBox="0 0 512 512" height="18px" width="18px" fill="#fff"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM184 296c0 13.3 10.7 24 24 24s24-10.7 24-24V232h64c13.3 0 24-10.7 24-24s-10.7-24-24-24H232V120c0-13.3-10.7-24-24-24s-24 10.7-24 24v64H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h64v64z"/></svg>`;
+        }
+        else {
+            isclick = true;
+            zoom.innerHTML = `<svg  viewBox="0 0 512 512" height="18px" width="18px" fill="#fff" ><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM136 184c-13.3 0-24 10.7-24 24s10.7 24 24 24H280c13.3 0 24-10.7 24-24s-10.7-24-24-24H136z"/></svg>`;
+        }
+
+    });
+    close.addEventListener('click', () => {
+        closeModal(popup);
+    });
+    next.addEventListener('click', getNext);
+    prev.addEventListener('click', getPrev);
+
+    popup.addEventListener('touchstart', (e) => {
+        x1 = e.touches[0].clientX;
+        y1 = e.touches[0].clientY;
+
+    }, { passive: true });
+
+    popup.addEventListener('touchmove', (e) => {
+        if (!x1 || !y1) {
+            return false;
+        }
+        let x2 = e.touches[0].clientX;
+        let y2 = e.touches[0].clientY;
+        let xDiff = x2 - x1;
+        let yDiff = y2 - y1;
+        if (Math.abs(xDiff) > Math.abs(yDiff)) {
+            if (xDiff > 0) {
+                getPrev();
+            }
+            else { 
+                getNext();
+                
+            }
+        }
+        else {
+            if (yDiff > 0 || yDiff < 0) {
+                closeModal(popup);
+            }
+        }
+        x1 = null;
+        y1 = null;
+    }, { passive: true })
+    document.addEventListener('keydown', (e) => {
+        if (e.code === 'ArrowRight') {
+            getNext();
+        }
+        else if (e.code === 'ArrowLeft') {
+            getPrev();
+        }
+    });
+
+    document.addEventListener('fullscreenchange', () => {
+        window.scrollTo(0, currentScrollPos);
+    }, { passive: true });
 
     function closeModal(modal) {
         img.classList.remove('popup__img-zomming');
         modal.remove();
-        setTimeout(()=> {
+        setTimeout(() => {
             document.body.style.overflow = '';
         }, 400);
-       
-    } 
-    fullscreen.addEventListener('click', ()=> { 
-         if (!document.fullscreenElement) { 
-            popup.requestFullscreen();    
-            fullscreen.innerHTML='<svg width="24px" height="24px" viewBox="0 0 950 1024"><path class="fslightbox-svg-path" d="M682 342h128v84h-212v-212h84v128zM598 810v-212h212v84h-128v128h-84zM342 342v-128h84v212h-212v-84h128zM214 682v-84h212v212h-84v-128h-128z"></path></svg>';
-         }
-          else { 
-            document.exitFullscreen();
-            fullscreen.innerHTML = '<svg width="20px" height="20px" viewBox="0 0 18 18"><path class="fslightbox-svg-path" d="M4.5 11H3v4h4v-1.5H4.5V11zM3 7h1.5V4.5H7V3H3v4zm10.5 6.5H11V15h4v-4h-1.5v2.5zM11 3v1.5h2.5V7H15V3h-4z"></path></svg>'; 
-             
-           
-          }
-       
-         
-   
-    });  
-    let isclick = false;
-    zoom.addEventListener('click', ()=> {   
-        img.classList.toggle('popup__img-zomming')
-        if (isclick) {
-            isclick = false; 
-            zoom.innerHTML= `<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="white">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M5 10C5 7.23858 7.23858 5 10 5C12.7614 5 15 7.23858 15 10C15 11.381 14.4415 12.6296 13.5355 13.5355C12.6296 14.4415 11.381 15 10 15C7.23858 15 5 12.7614 5 10ZM10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17C11.5719 17 13.0239 16.481 14.1921 15.6063L19.2929 20.7071C19.6834 21.0976 20.3166 21.0976 20.7071 20.7071C21.0976 20.3166 21.0976 19.6834 20.7071 19.2929L15.6063 14.1921C16.481 13.0239 17 11.5719 17 10C17 6.13401 13.866 3 10 3ZM11 8C11 7.44772 10.5523 7 10 7C9.44772 7 9 7.44772 9 8V9H8C7.44772 9 7 9.44772 7 10C7 10.5523 7.44772 11 8 11H9V12C9 12.5523 9.44772 13 10 13C10.5523 13 11 12.5523 11 12V11H12C12.5523 11 13 10.5523 13 10C13 9.44772 12.5523 9 12 9H11V8Z" fill="white"/>
-            </svg>`;
-        }
-        else {
-            isclick = true; 
-            zoom.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20"  enable-background="new 0 0 32 32" id="Editable-line" version="1.1" viewBox="0 0 32 32" xml:space="preserve"><circle cx="14" cy="14" fill="none" id="XMLID_131_" r="9" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/><line fill="none" id="XMLID_130_" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" x1="27" x2="20.366" y1="27" y2="20.366"/><line fill="none" id="XMLID_128_" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" x1="10" x2="18" y1="14" y2="14"/></svg>`;
-        }
-        
-    });
-    close.addEventListener('click', ()=> {  
-        closeModal(popup);
-    });
 
-function getNext () {
-    if (currentImg >= +imgs.length - 1 )
-    currentImg = -1;
-       img.setAttribute('src', imgs[++currentImg].getAttribute('href'));
-       currentNumber.innerHTML = `${currentImg + 1}`;
-}
-function getPrev() {
-    if (currentImg <=  0 )
-    currentImg = +imgs.length;
-   img.setAttribute('src', imgs[--currentImg].getAttribute('href')); 
-   currentNumber.innerHTML = `${currentImg + 1}`;
-} 
+    }
+    function getNext() {
+        if (currentImg >= +imgs.length - 1)
+            currentImg = -1;
+        img.setAttribute('src', imgs[++currentImg].getAttribute('href'));
+        currentNumber.innerHTML = `${currentImg + 1}`;
+    }
+    function getPrev() {
+        if (currentImg <= 0)
+            currentImg = +imgs.length;
+        img.setAttribute('src', imgs[--currentImg].getAttribute('href'));
+        currentNumber.innerHTML = `${currentImg + 1}`;
+    }
 
-next.addEventListener('click', getNext);
-prev.addEventListener('click', getPrev); 
-let x1 = null;
-let y1 = null;
-popup.addEventListener('touchstart', (e) => {
- x1 = e.touches[0].clientX;
- y1 = e.touches[0].clientY;
-});
 
-popup.addEventListener('touchmove', (e)=>{ 
-    if (!x1 || !y1) {
-        return false;
-    }
-    let x2 = e.touches[0].clientX;
-    let y2 = e.touches[0].clientY;
-    let xDiff = x2 - x1;
-    let yDiff = y2 - y1; 
-    if (Math.abs(xDiff) > Math.abs(yDiff))  {
-            if (xDiff > 0) {
-                getNext();
-            }
-            else {
-               getPrev();
-            }
-    }
-    else {
-        if (yDiff > 0 || yDiff < 0) {
-            closeModal(popup);
-        }
-    } 
-    x1 = null;
-    y1 = null;
-})
-document.addEventListener('keydown', (e) => {
-    if (e.code === 'ArrowRight') {
-        getNext();
-    }
-    else if (e.code === 'ArrowLeft') {
-        getPrev();
-    }
-}); 
 
 }
 
