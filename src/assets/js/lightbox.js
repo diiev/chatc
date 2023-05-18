@@ -29,7 +29,6 @@ function lightbox () {
     imgs.forEach((item,i) => {
        item.addEventListener('click', (e)=> { 
             e.preventDefault();
-        document.body.style.paddingRight = '17px';
         document.body.style.overflow = 'hidden';
         document.body.append(popup);
         popup.append(img);
@@ -63,10 +62,12 @@ function lightbox () {
     }); 
 
     function closeModal(modal) {
-        document.body.style.paddingRight = '';
-        document.body.style.overflow = '';
         img.classList.remove('popup__img-zomming');
         modal.remove();
+        setTimeout(()=> {
+            document.body.style.overflow = '';
+        }, 400);
+       
     } 
     fullscreen.addEventListener('click', ()=> { 
          if (!document.fullscreenElement) { 
@@ -117,10 +118,37 @@ function getPrev() {
 
 next.addEventListener('click', getNext);
 prev.addEventListener('click', getPrev); 
-
-img.addEventListener('touchstart', (e) => {
-   
+let x1 = null;
+let y1 = null;
+popup.addEventListener('touchstart', (e) => {
+ x1 = e.touches[0].clientX;
+ y1 = e.touches[0].clientY;
 });
+
+popup.addEventListener('touchmove', (e)=>{ 
+    if (!x1 || !y1) {
+        return false;
+    }
+    let x2 = e.touches[0].clientX;
+    let y2 = e.touches[0].clientY;
+    let xDiff = x2 - x1;
+    let yDiff = y2 - y1; 
+    if (Math.abs(xDiff) > Math.abs(yDiff))  {
+            if (xDiff > 0) {
+                getNext();
+            }
+            else {
+               getPrev();
+            }
+    }
+    else {
+        if (yDiff > 0 || yDiff < 0) {
+            closeModal(popup);
+        }
+    } 
+    x1 = null;
+    y1 = null;
+})
 document.addEventListener('keydown', (e) => {
     if (e.code === 'ArrowRight') {
         getNext();
@@ -128,7 +156,8 @@ document.addEventListener('keydown', (e) => {
     else if (e.code === 'ArrowLeft') {
         getPrev();
     }
-});
+}); 
+
 }
 
 export default lightbox;
