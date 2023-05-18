@@ -6,15 +6,27 @@ import bvi from 'bvi';
 import lightbox  from './lightbox';
 
 document.addEventListener('DOMContentLoaded', () => {   
-  
-  try {
+  function isHomepage() {
+    let pathName = window.location.pathname;
+    if (pathName == '/' || pathName == '/index.html' || pathName == '/chatc/dist/index.html') {
+      return true;
+    } else {
+      return false; 
+    }
+  }
+  try { 
+    if (isHomepage()) {
+      gos();
+      slider();
+    } 
+    
+   
     svg();
     new isvek.Bvi();  
     lightbox();
-    gos();
-    slider();
    
-    const accordion = document.querySelectorAll('.accordion_item'),
+   
+      const accordion = document.querySelectorAll('.accordion_item'),
       burger = document.querySelector('.burger'),
       menu = document.querySelector('.menu'),
       arrows = document.querySelectorAll('.arrow'),
