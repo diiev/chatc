@@ -134,10 +134,10 @@ function lightbox() {
 
     function closeModal(modal) {
         img.classList.remove('popup__img-zomming');
-        modal.remove();
         document.body.style.paddingRight = '';
         document.body.style.overflow = '';
-
+        modal.remove();
+       
     }
     function getNext() {
         if (currentImg >= +imgs.length - 1)

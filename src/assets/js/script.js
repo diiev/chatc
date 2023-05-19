@@ -15,19 +15,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   try { 
+    svg();
+    new isvek.Bvi();  
+    lightbox();
     if (isHomepage()) {
       gos();
       slider();
     } 
-    svg();
-    new isvek.Bvi();  
-    lightbox();
+    
    
    
       const accordion = document.querySelectorAll('.accordion_item'),
       burger = document.querySelector('.burger'),
       menu = document.querySelector('.menu'),
-      arrows = document.querySelectorAll('.arrow'),
+      menuArrows = document.querySelectorAll('.menu__link.arrow'),
+      submenuArrows = document.querySelectorAll('.sub-menu__link.arrow'),
       quoter_slider = document.querySelector('.quoter'),
       search_icon = document.querySelector('.fa-magnifying-glass');
   
@@ -76,14 +78,36 @@ document.addEventListener('DOMContentLoaded', () => {
   
     if (isMobile.any()) {
       document.body.classList.add('touch');
-      arrows.forEach(arrow => {
+      menuArrows.forEach(arrow => {
         arrow.addEventListener('click', (e) => {
           e.preventDefault();
           arrow.classList.toggle('active');
           arrow.classList.toggle('parent');
           arrow.nextElementSibling.classList.toggle('submenu__active');
+          menuArrows.forEach(otherArrow => {
+            if (otherArrow !== arrow) {
+              otherArrow.classList.remove('active');
+              otherArrow.classList.remove('parent');
+              otherArrow.nextElementSibling.classList.remove('submenu__active')
+            }
+          });
   
         });
+      }); 
+      submenuArrows.forEach(arrow=> {
+          arrow.addEventListener('click', ()=> {
+            arrow.classList.toggle('active');
+            arrow.classList.toggle('parent');
+            arrow.nextElementSibling.classList.toggle('submenu__active'); 
+            submenuArrows.forEach(otherArrow => {
+              if (otherArrow !== arrow) {
+                otherArrow.classList.remove('active');
+                otherArrow.classList.remove('parent');
+                otherArrow.nextElementSibling.classList.remove('submenu__active')
+              }
+            });
+    
+          });
       });
   
     } else {
@@ -130,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } 
   }
   catch (e) {
-    console.log(e);
+    
   } 
 });
 
