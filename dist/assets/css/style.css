@@ -676,6 +676,22 @@ i {
     transition: all 0.3s;
 }
 
+.popup__slideBtnsPrev {
+    height: 100%;
+    width: 100px;
+    cursor: pointer;
+}
+
+.popup__slideBtnsNext {
+    height: 100%;
+    width: 100px;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .popup .slider__prev {
     transform: rotate(-135deg);
 }
@@ -4731,6 +4747,7 @@ th {
 
 .single_post_image {
     padding: 20px 0;
+    display: block;
 }
 
 .single_post_image img {

@@ -8,6 +8,20 @@
     z-index: 99999;
     overflow: hidden;
     transition: all .3s;
+    &__slideBtnsPrev {
+        height:100%;
+        width:100px;
+        cursor:pointer;
+    }
+    &__slideBtnsNext {
+        height: 100%;
+        width: 100px;
+        cursor: pointer;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
     .slider__prev {
         transform: rotate(-135deg);
     }
