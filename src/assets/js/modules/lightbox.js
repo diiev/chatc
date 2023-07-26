@@ -14,8 +14,6 @@ function lightbox() {
     const popupBtnNext  =  document.createElement('div');
     const prev = document.createElement('i');
     const next = document.createElement('i');
-    
-   
     let currentImg = 0;
     let currentScrollPos = 0;
     let x1 = null;
@@ -67,7 +65,6 @@ function lightbox() {
         if (e.code === 'Escape') {
             closeModal(popup);
         }
-        console.log(e.code);
         if (e.code === 'KeyF') {
             setFullScreenImg();
         }

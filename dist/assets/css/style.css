@@ -5097,10 +5097,10 @@ th {
 
 .accordion_item_content {
     border-top: 1px solid #000;
-    height: 0;
-    visibility: hidden;
+    max-height: 0;
+    opacity: 0;
     overflow: hidden;
-    transition: height 0.6s;
+    transition: all 0.4s ease-out;
 }
 
 .accordion_item_content_flex {
