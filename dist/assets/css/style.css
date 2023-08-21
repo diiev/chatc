@@ -3532,10 +3532,15 @@ table td {
 .buttons {
     display: flex;
     position: relative;
+    align-items: center;
 }
 
 .button_icons {
     padding-left: 10px;
+}
+
+.social_btns {
+    vertical-align: bottom;
 }
 
 .social_btns_icon {

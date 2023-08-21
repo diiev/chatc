@@ -48,19 +48,24 @@
 
 .buttons {
     display: flex;
-    position: relative
+    position: relative;
+    align-items: center;
 }
 
 .button_icons {
     padding-left: 10px
 }
 
-.social_btns_icon {
-    height: 23px;
-    transition: all .3s;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    margin: 4px 0 0 0
+.social_btns
+{ 
+    vertical-align: bottom;
+    &_icon {
+        height: 23px;
+        transition: all .3s;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        margin: 4px 0 0 0
+    }
 }
 
 .button_icons:hover .social_btns_icon {
