@@ -1,34 +1,50 @@
-function up () {
-    const btnUp = {
-        el: document.querySelector('.top_arrow'),
-        show() {
-          // удалим у кнопки класс scrollTop_hide
-          this.el.classList.remove('top_arrow_hide');
-        },
-        hide() {
-          // добавим к кнопке класс scrollTop_hide
-          this.el.classList.add('top_arrow_hide');
-        },
-        addEventListener() {
-          // при прокрутке содержимого страницы
-          window.addEventListener('scroll', () => {
-            // определяем величину прокрутки
-            const scrollY = window.scrollY || document.documentElement.scrollTop;
-            // если страница прокручена больше чем на 900px, то делаем кнопку видимой, иначе скрываем
-            scrollY > 900 ? this.show() : this.hide();
-          });
-          // при нажатии на кнопку .btn-up
-          document.querySelector('.top_arrow').onclick = () => {
-            // переместим в начало страницы
-            window.scrollTo({
-              top: 0,
-              left: 0,
-              behavior: 'smooth'
-            });
-          }
-        }
-      };
-    
-      btnUp.addEventListener();
-}
-export default up;
+const scrolling = (upSelector) => {
+  const upElem = document.querySelector(upSelector); 
+  window.addEventListener('scroll', () => {
+         if (document.documentElement.scrollTop > 1000) {
+                      upElem.style.opacity = 1;
+                      upElem.style.visibility = 'visible';
+         } 
+         else {
+          upElem.style.opacity = 0;
+          upElem.style.visibility = 'hiiden';
+         }
+  }); 
+
+
+  let links = document.querySelectorAll('[href^="#"]'),
+      speed = 0.18;
+      links.forEach(link => {
+          link.addEventListener('click', function(e) {
+              e.preventDefault();
+              let widthTop = document.documentElement.scrollTop,
+                  hash = this.hash, 
+                  toBlock = document.querySelector(hash).getBoundingClientRect().top, 
+                  start = null;
+                  console.log(hash);
+                  requestAnimationFrame(step); 
+                  function step (time) { 
+                      if (start === null) {
+                          start = time;
+                      }
+                      let progress = time - start,
+                          r = (toBlock < 0 ? Math.max(widthTop - progress / speed, widthTop + toBlock) : Math.min(widthTop + progress / speed, widthTop + toBlock))
+                          document.documentElement.scrollTo(0,r);
+      
+                          if (r != widthTop + toBlock) {
+                              requestAnimationFrame(step);
+                          } 
+                          else {
+                              location.hash = hash;
+                          }
+      
+                  }
+          }); 
+     
+      });
+
+
+
+};
+
+export default scrolling;

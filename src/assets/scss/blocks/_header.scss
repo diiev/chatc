@@ -58,7 +58,8 @@
 
 .social_btns
 { 
-    vertical-align: bottom;
+    display: flex;
+   align-items: baseline;
     &_icon {
         height: 23px;
         transition: all .3s;

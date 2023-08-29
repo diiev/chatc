@@ -3540,7 +3540,8 @@ table td {
 }
 
 .social_btns {
-    vertical-align: bottom;
+    display: flex;
+    align-items: baseline;
 }
 
 .social_btns_icon {
@@ -3774,12 +3775,7 @@ a:hover .angle {
     opacity: 1;
     z-index: 10;
     transition: all 0.4s;
-}
-
-.top_arrow_hide {
-    visibility: hidden;
     opacity: 0;
-    z-index: -1;
 }
 
 .top_arrow .angle {

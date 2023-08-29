@@ -6,7 +6,7 @@ import bvi from 'bvi';
 import lightbox  from './modules/lightbox';
 import Accordion from './modules/accordion';
 import menu from './modules/menu';
-import up from './modules/up';
+import scrolling from './modules/up';
 import isHomepage from './modules/isHomePage';
 document.addEventListener('DOMContentLoaded', () => {   
   try { 
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } 
     new Accordion ('.accordion_item').init();
     menu();
-    up();
+    scrolling('.top_arrow');
   } 
   catch (e) {} 
 });
