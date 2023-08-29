@@ -6,7 +6,7 @@ import bvi from 'bvi';
 import lightbox  from './modules/lightbox';
 import Accordion from './modules/accordion';
 import menu from './modules/menu';
-import scrolling from './modules/up';
+import scrolling from './modules/scrolling';
 import isHomepage from './modules/isHomePage';
 document.addEventListener('DOMContentLoaded', () => {   
   try { 
