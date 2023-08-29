@@ -3759,6 +3759,7 @@ a:hover .angle {
 }
 
 .top_arrow {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3788,8 +3789,9 @@ a:hover .angle {
     height: 9px;
 }
 
-.top_arrow a {
-    margin: 6px 0 0 0;
+.top_arrow i:nth-child(2) {
+    position: absolute;
+    top: 31px;
 }
 
 .top_arrow:hover .angle {
