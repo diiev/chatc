@@ -823,8 +823,12 @@
     }
 
     .content_btn_spec a {
-        margin: 0 5px;
-        padding: 10px
+        margin: 2px 5px;
+        padding: 10px;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .link_file {
