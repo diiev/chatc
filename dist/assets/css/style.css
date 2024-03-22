@@ -5307,7 +5307,7 @@ th {
 }
 
 .button {
-    display: block;
+    display: inline-block;
     margin: 5px 0 5px 0;
     text-align: left;
     white-space: nowrap;
@@ -6142,6 +6142,7 @@ th {
 
     .button,
   .content_btn a {
+        display: block;
         font-size: 12px;
     }
 
