@@ -4,7 +4,12 @@ function slider () {
         container: '.slider_banner',
         items: 1,
         nav: false,
-        controls: false
+        controls: false,
+        autoplay: true,
+        autoplayTimeout:8000,
+        autoplayButton: false,
+        autoplayButtonOutput: false
+
       });
       document.querySelector('#promo__slider-prev').addEventListener('click', () => {
         sliderBanner.goTo('prev');
