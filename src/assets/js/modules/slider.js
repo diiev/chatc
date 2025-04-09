@@ -6,7 +6,7 @@ function slider () {
         nav: false,
         controls: false,
         autoplay: true,
-        autoplayTimeout:8000,
+        autoplayTimeout:15000,
         autoplayButton: false,
         autoplayButtonOutput: false
 
