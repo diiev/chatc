@@ -149,7 +149,9 @@
 
 .menu__list {
     display: flex;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-left: 30px;
 }
 
 .menu__list>li {
