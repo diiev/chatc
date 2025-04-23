@@ -5511,6 +5511,7 @@ th {
 
     .menu__list {
         display: block;
+        margin-left: auto;
         text-align: left;
     }
 
@@ -5875,6 +5876,7 @@ th {
     .top_arrow .angle {
         width: 8px;
         height: 8px;
+        margin: -9px 0;
     }
 
     h2 {

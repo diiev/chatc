@@ -172,6 +172,7 @@
 
     .menu__list {
         display: block;
+        margin-left: auto;
         text-align: left
     }
 
@@ -540,7 +541,8 @@
 
     .top_arrow .angle {
         width: 8px;
-        height: 8px
+        height: 8px;
+        margin: -9px 0;
     }
 
     h2 {
