@@ -247,5 +247,66 @@
         </footer>
      </div>
    <script type="text/javascript" src="assets/js/script.js"></script>
+   <!-- Cookie Consent Banner -->
+<div id="cookieConsentBanner" class="cookie-banner">
+  <div class="cookie-banner__container">
+    <div class="cookie-banner__text">
+      <p>Мы используем файлы cookie для улучшения работы сайта и сбора анонимной статистики. Нажимая «Принять», вы соглашаетесь на использование всех файлов cookie. Вы можете настроить свой выбор, нажав «Настроить».</p>
+      <p class="cookie-banner__links">
+        <a href="/privacy-policy" target="_blank">Политика конфиденциальности</a> |
+        <a href="/cookie-policy" target="_blank">Политика использования cookie</a>
+      </p>
+    </div>
+    <div class="cookie-banner__buttons">
+      <button id="cookieConsentCustomize" class="cookie-btn cookie-btn--secondary" aria-label="Настроить использование файлов cookie">Настроить</button>
+      <button id="cookieConsentReject" class="cookie-btn cookie-btn--secondary" aria-label="Отклонить все необязательные файлы cookie">Отклонить</button>
+      <button id="cookieConsentAccept" class="cookie-btn cookie-btn--primary" aria-label="Принять все файлы cookie">Принять</button>
+    </div>
+  </div>
+
+  <!-- Панель настроек (скрыта по умолчанию) -->
+  <div id="cookieSettingsPanel" class="cookie-settings" hidden>
+    <div class="cookie-settings__header">
+      <h2>Настройки файлов cookie</h2>
+      <button id="cookieSettingsClose" class="cookie-settings__close" aria-label="Закрыть настройки">×</button>
+    </div>
+    <div class="cookie-settings__content">
+      <div class="cookie-setting">
+        <div class="cookie-setting__info">
+          <h3>Обязательные</h3>
+          <p>Эти файлы необходимы для работы сайта. Их нельзя отключить.</p>
+        </div>
+        <label class="cookie-setting__toggle">
+          <input type="checkbox" checked disabled>
+          <span class="cookie-setting__slider"></span>
+        </label>
+      </div>
+      <div class="cookie-setting">
+        <div class="cookie-setting__info">
+          <h3>Аналитические</h3>
+          <p>Помогают понять, как посетители взаимодействуют с сайтом (например, Google Analytics).</p>
+        </div>
+        <label class="cookie-setting__toggle">
+          <input id="cookieAnalytics" type="checkbox">
+          <span class="cookie-setting__slider"></span>
+        </label>
+      </div>
+      <div class="cookie-setting">
+        <div class="cookie-setting__info">
+          <h3>Маркетинговые</h3>
+          <p>Используются для показа релевантной рекламы и отслеживания эффективности кампаний.</p>
+        </div>
+        <label class="cookie-setting__toggle">
+          <input id="cookieMarketing" type="checkbox">
+          <span class="cookie-setting__slider"></span>
+        </label>
+      </div>
+    </div>
+    <div class="cookie-settings__footer">
+      <button id="cookieSettingsSave" class="cookie-btn cookie-btn--primary">Сохранить настройки</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
