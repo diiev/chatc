@@ -1,21 +1,27 @@
 .popup {
     position: fixed;
-    height: 100%;
-    width: 100%;
+    inset: 0;
     background-color: rgba(0, 0, 0, .95);
-    left: 0;
-    top: 0;
     z-index: 99999;
     overflow: hidden;
-    transition: all .3s; 
 
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .25s ease, visibility .25s ease;
 
+    &.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
 
     &__slideBtnsPrev {
-        height:100%;
-        width:100px;
-        cursor:pointer;
+        height: 100%;
+        width: 100px;
+        cursor: pointer;
     }
+
     &__slideBtnsNext {
         height: 100%;
         width: 100px;
@@ -25,41 +31,63 @@
         top: 50%;
         transform: translateY(-50%);
     }
+
     .slider__prev {
         transform: rotate(-135deg);
     }
+
     .slider__next {
         transform: rotate(45deg);
     }
-   .slider__prev, 
-   .slider__next {
-    border-color: #fff;
-    z-index: 4;
-    &:hover {
-        opacity: 1;
 
+    .slider__prev,
+    .slider__next {
+        border-color: #fff;
+        z-index: 4;
+
+        &:hover {
+            opacity: 1;
+
+        }
     }
-   }
+
     &__img {
         position: absolute;
-        height: 60%;
-        width: 60%;
         left: 50%;
         top: 50%;
-        transform: translateX(-50%) translateY(-50%);
+
+        /* вместо height/width 60% лучше ограничить вьюпортом */
+        max-width: 90vw;
+        max-height: 90vh;
+        width: auto;
+        height: auto;
+
         object-fit: contain;
-        transition: all .6s;
-         opacity: 1;
-        transition: opacity 0.3s ease; /* плавность переключения */
-        &-zomming {
-            height: 100%;
-            width: 100%;
-        }
+
+        /* переменные для zoom/pan */
+        --tx: 0px;
+        --ty: 0px;
+        --scale: 1;
+
+        transform: translate(-50%, -50%) translate(var(--tx), var(--ty)) scale(var(--scale));
+        transition: opacity .25s ease, transform .25s ease;
+        opacity: 1;
+
         &--fadeout {
             opacity: 0;
         }
+
+        cursor: grab;
+
+        &.is-dragging {
+            cursor: grabbing;
+            transition: opacity .25s ease;
+        }
+
+
+
     }
-    
+
 
 
     &__btns {
@@ -84,31 +112,32 @@
         }
     }
 
- &__numbers {
-    position: absolute;
-    left: 0px;
-    top:0;
-    background: #000;
-    color: #fff;
-    padding: 15px;
-    text-align: center;
-    font-size: 16px;
-    transition: all .3s;
- }
+    &__numbers {
+        position: absolute;
+        left: 0px;
+        top: 0;
+        background: #000;
+        color: #fff;
+        padding: 15px;
+        text-align: center;
+        font-size: 16px;
+        transition: all .3s;
+    }
 }
 
 @media (max-width: 767px) {
     .popup {
         &__img {
-          
+
             height: 100%;
             width: 100%;
             object-fit: contain;
             transition: all .6s;
+
             &-zomming {
                 transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.4);
             }
         }
     }
-    
+
 }
