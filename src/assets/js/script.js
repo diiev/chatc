@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new Accordion ('.accordion_item').init();
     menu();
     scrolling('.top_arrow');
-    cookie();
+   
   } 
   catch (e) {} 
 });

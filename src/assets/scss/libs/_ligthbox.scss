@@ -8,7 +8,7 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity .25s ease, visibility .25s ease;
+    transition: opacity .2s ease, visibility .2s ease;
 
     &.is-open {
         opacity: 1;
@@ -70,7 +70,7 @@
         --scale: 1;
 
         transform: translate(-50%, -50%) translate(var(--tx), var(--ty)) scale(var(--scale));
-        transition: opacity .25s ease, transform .25s ease;
+        transition: opacity .2s ease, transform .2s ease;
         opacity: 1;
 
         &--fadeout {
@@ -81,7 +81,7 @@
 
         &.is-dragging {
             cursor: grabbing;
-            transition: opacity .25s ease;
+            transition: opacity .2s ease;
         }
 
 

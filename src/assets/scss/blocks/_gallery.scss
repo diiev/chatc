@@ -18,11 +18,11 @@
 
 .gallery_img img {
     object-fit: cover;
-    transition: 1.5s all;
-    -webkit-transition: 1.5s all;
-    -moz-transition: 1.5s all;
+    transition: .5s all;
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
 }
 
 .gallery_img:hover img {
-    transform: scale(1.1)
+    filter: brightness(0.7);
 }

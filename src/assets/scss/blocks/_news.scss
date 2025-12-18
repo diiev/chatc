@@ -25,10 +25,6 @@
     -moz-transition: 1.5s all
 }
 
-.posts:hover img {
-    transform: scale(1.1)
-}
-
 .post_content {
     padding: 0 15px 0 15px;
     max-width: 65%;
@@ -80,4 +76,102 @@
 .posts_btn_prev_next a:hover .next_icon,
 .posts_btn_prev_next a:hover .prev_icon {
     fill: #0E873F
+}
+
+/* =========================================
+   Hover-эффекты для поста (карточки)
+   ========================================= */
+
+.posts{
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid rgba(2, 7, 37, 0.06);
+    transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+    will-change: transform;
+}
+
+.posts:hover{
+    transform: translateY(-6px);
+    border-color: rgba(14, 135, 63, 0.20);
+    cursor: pointer;
+}
+
+/* Изображение: лёгкий zoom + затемнение градиентом */
+.post_img{
+    position: relative;
+}
+
+.post_img::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0.18), rgba(0,0,0,0));
+    opacity: 0;
+    transition: opacity .35s ease;
+    pointer-events: none;
+}
+
+.posts:hover .post_img::after{
+    opacity: 1;
+}
+
+.post_img img{
+    /* Переопределяем ваш "transition: 1.5s all" на более быстрый и мягкий */
+    transition: transform .65s ease, filter .65s ease;
+}
+
+.posts:hover .post_img img{
+   
+    filter: saturate(1.08) contrast(1.02);
+}
+
+/* Заголовок: акцент + микро-сдвиг */
+.post_content_title h3{
+    transition: color .25s ease, transform .25s ease;
+}
+
+.posts:hover .post_content_title h3{
+    color: #0E873F;
+    transform: translateY(-1px);
+}
+
+/* Читать дальше: чуть ярче и приподнимается */
+.post_content_read_more{
+    opacity: .86;
+    transform: translateY(0);
+    transition: transform .25s ease, opacity .25s ease, color .25s ease;
+}
+
+.posts:hover .post_content_read_more{
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* Если внутри есть ссылка "читать дальше", можно подсветить её при наведении на карточку */
+.posts:hover .post_content_read_more a{
+    color: #0E873F;
+}
+
+/* =========================================
+   Доступность: фокус и reduced motion
+   ========================================= */
+
+/* Сработает, если .posts — интерактивный элемент (a/button) или вы добавили tabindex */
+.posts:focus-visible{
+    outline: 3px solid rgba(14, 135, 63, 0.45);
+    outline-offset: 3px;
+}
+
+/* Убираем лишние анимации тем, кто попросил reduce motion */
+@media (prefers-reduced-motion: reduce){
+    .posts,
+    .post_img img,
+    .post_img::after,
+    .post_content_title h3,
+    .post_content_read_more,
+    .next_icon,
+    .prev_icon{
+        transition: none !important;
+    }
 }

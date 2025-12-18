@@ -131,9 +131,30 @@
     padding: 10px 0
 }
 
-.logo img {
-    height: 80px;
+.logo {
+    position: relative;
+
+    img {
+  height: 80px;
     width: 80px
+    } 
+
+    svg {
+ position: absolute;
+    z-index: 1;
+    transform: scale(2) rotate(2deg);
+    transition: all .3s  ease-in-out;
+    top: 0px;
+    left: 85px;
+    }
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+.logo:hover svg {
+    transform:  scale(2) rotate(6.5deg);
+    
 }
 
 .menu {
