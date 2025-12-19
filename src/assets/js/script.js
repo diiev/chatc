@@ -9,6 +9,8 @@ import menu from './modules/menu';
 import scrolling from './modules/scrolling';
 import isHomepage from './modules/isHomePage';
 import cookie from './modules/cookies';
+import newyear from './modules/newyear';
+import Snow from './modules/snow';
 document.addEventListener('DOMContentLoaded', () => {   
   try { 
     svg();
@@ -21,7 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
     new Accordion ('.accordion_item').init();
     menu();
     scrolling('.top_arrow');
-   
+    newyear()
+    new Snow({
+      showSnowBalls: false
+    })
   } 
   catch (e) {} 
 });

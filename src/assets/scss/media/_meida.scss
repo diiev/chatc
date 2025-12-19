@@ -29,6 +29,16 @@
         height: 60px;
         width: 60px
     }
+    
+     .logo svg {
+        
+    transform: scale(1.5) rotate(2deg);
+    top: -10px;
+    left: 45px;
+} 
+.logo:hover svg {
+        transform: scale(1.5) rotate(6.5deg);
+}
 
     .search {
         margin: 10% 0 0 0
@@ -607,7 +617,17 @@
     .logo img {
         height: 50px;
         width: 50px
-    }
+    } 
+
+    .logo svg {
+        
+    transform: scale(1.2) rotate(2deg);
+    top: -10px;
+    left: 17px;
+} 
+.logo:hover svg {
+        transform: scale(1.2) rotate(6.5deg);
+}
 
     .slider_banner.slick-slider {
         display: none
