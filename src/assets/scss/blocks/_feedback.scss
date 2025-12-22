@@ -408,36 +408,6 @@
     }
 }
 
-/* Темная тема (опционально) */
-@media (prefers-color-scheme: dark) {
-    .consent-block {
-        background-color: #2d3748;
-        border-color: #4a5568;
-    }
-    
-    .checkbox-custom {
-        background-color: #4a5568;
-        border-color: #718096;
-    }
-    
-    .checkbox-text strong {
-        color: #e2e8f0;
-    }
-    
-    .consent-description {
-        color: #cbd5e0;
-    }
-    
-    .checkbox-label:hover .checkbox-custom {
-        border-color: #48bb78;
-    }
-    
-    .checkbox-input:checked ~ .checkbox-label .checkbox-custom {
-        background-color: #48bb78;
-        border-color: #48bb78;
-    }
-}    
-
 
 
 

@@ -544,16 +544,20 @@
         height: 35px;
         width: 35px
     }
-
+   .top_arrow i:nth-child(2) {
+  
+    top: 28px;
+}
     .angle {
         border-width: 1px
     }
 
     .top_arrow .angle {
-        width: 8px;
-        height: 8px;
+        width: 7px;
+        height: 7px;
         margin: -9px 0;
-    }
+    } 
+    
 
     h2 {
         font-size: 25px
