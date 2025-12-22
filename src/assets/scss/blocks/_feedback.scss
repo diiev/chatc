@@ -1,0 +1,444 @@
+           /* Контейнер для формы и аккордеона */
+        .content-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        
+        @media (min-width: 992px) {
+            .content-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        /* Стили для формы обратной связи */
+        .feedback-form-container {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feedback-form label {
+            
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .feedback-form input,
+        .feedback-form select,
+        .feedback-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        
+        .feedback-form input:focus,
+        .feedback-form select:focus,
+        .feedback-form textarea:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+        
+        .feedback-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Кнопка отправки - цвет из сайта */
+        .feedback-form button {
+            background-color: #217346; /* Основной зеленый цвет с сайта */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: bold;
+            width: 100%;
+        }
+        
+        .feedback-form button:hover {
+            background-color: #1a5c38; /* Более темный зеленый при наведении */
+        }
+        
+        .feedback-form button:active {
+            background-color: #14482d; /* Еще темнее при нажатии */
+        }
+        
+        /* Стили для аккордеона */
+        .faq-accordion {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .accordion-item {
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        
+        .accordion-header {
+            padding: 15px 25px 15px 0px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #2c3e50;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        .accordion-header:hover {
+            color: #217346; /* Цвет кнопки при наведении */
+        }
+        
+        .accordion-header::after {
+            content: '+';
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            font-weight: bold;
+            color: #217346;
+            transition: transform 0.3s;
+        }
+        
+        .accordion-header.active::after {
+            content: '−';
+            transform: translateY(-50%);
+        }
+        
+        .accordion-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .accordion-content.active {
+            padding: 0 0 15px 0;
+            max-height: 500px;
+        }
+        
+        /* Информационный блок */
+        .info-block {
+            background-color: #e8f4fc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .info-block h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        
+        /* Стили для формы нового вопроса */
+        .new-question-form {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+        }
+        
+        .new-question-form h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .form-group {
+            flex: 1 1 200px;
+        }
+        
+        .submit-new-question {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-new-question:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Стили для статусов сообщений */
+        .status-message {
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .status-message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .status-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .status-message.show {
+            display: block;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .feedback-form-container,
+            .faq-accordion {
+                padding: 15px;
+            }
+            
+            .feedback-page {
+                padding: 15px;
+            }
+        }
+
+
+  /* Блок согласия */
+.consent-block {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.consent-block:focus-within {
+    border-color: #217346;
+    box-shadow: 0 0 0 3px rgba(33, 115, 70, 0.1);
+}
+
+.consent-wrapper {
+    width: 100%;
+}
+
+/* Кастомный чекбокс */
+.custom-checkbox {
+    position: relative;
+    width: 100%;
+}
+
+.checkbox-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1.5;
+    user-select: none;
+    gap: 15px;
+}
+
+/* Кастомный квадратик чекбокса */
+.checkbox-custom {
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    background-color: white;
+    border: 2px solid #adb5bd;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    margin-top: 2px;
+}
+
+/* Галочка (скрыта по умолчанию) */
+.checkbox-custom::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 7px;
+    top: 3px;
+    width: 8px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* Стили при наведении */
+.checkbox-label:hover .checkbox-custom {
+    border-color: #217346;
+    box-shadow: 0 0 0 3px rgba(33, 115, 70, 0.1);
+}
+
+/* Стили когда чекбокс отмечен */
+.checkbox-input:checked ~ .checkbox-label .checkbox-custom {
+    background-color: #217346;
+    border-color: #217346;
+}
+
+.checkbox-input:checked ~ .checkbox-label .checkbox-custom::after {
+    display: block;
+}
+
+/* Стили при фокусе (для доступности) */
+.checkbox-input:focus ~ .checkbox-label .checkbox-custom {
+    border-color: #217346;
+    box-shadow: 0 0 0 3px rgba(33, 115, 70, 0.3);
+}
+
+/* Текст чекбокса */
+.checkbox-text {
+    flex: 1;
+}
+
+.checkbox-text strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-size: 16px;
+}
+
+.consent-description {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.privacy-link {
+    color: #217346;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.privacy-link:hover {
+    color: #1a5c38;
+    text-decoration: none;
+}
+
+/* Стили для отключенного состояния */
+.checkbox-input:disabled ~ .checkbox-label {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.checkbox-input:disabled ~ .checkbox-label .checkbox-custom {
+    background-color: #e9ecef;
+    border-color: #adb5bd;
+}
+
+/* Анимация при клике */
+.checkbox-input:checked ~ .checkbox-label .checkbox-custom {
+    animation: checkmark-pop 0.3s ease;
+}
+
+@keyframes checkmark-pop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .consent-block {
+        padding: 15px;
+        margin: 15px 0;
+    }
+    
+    .checkbox-label {
+        gap: 12px;
+    }
+    
+    .checkbox-custom {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+    }
+    
+    .checkbox-custom::after {
+        left: 6px;
+        top: 2px;
+        width: 6px;
+        height: 10px;
+        border-width: 0 2px 2px 0;
+    }
+    
+    .checkbox-text strong {
+        font-size: 15px;
+        margin-bottom: 6px;
+    }
+    
+    .consent-description {
+        font-size: 13px;
+    }
+}
+
+/* Темная тема (опционально) */
+@media (prefers-color-scheme: dark) {
+    .consent-block {
+        background-color: #2d3748;
+        border-color: #4a5568;
+    }
+    
+    .checkbox-custom {
+        background-color: #4a5568;
+        border-color: #718096;
+    }
+    
+    .checkbox-text strong {
+        color: #e2e8f0;
+    }
+    
+    .consent-description {
+        color: #cbd5e0;
+    }
+    
+    .checkbox-label:hover .checkbox-custom {
+        border-color: #48bb78;
+    }
+    
+    .checkbox-input:checked ~ .checkbox-label .checkbox-custom {
+        background-color: #48bb78;
+        border-color: #48bb78;
+    }
+}    
+
+
+
+
+

@@ -2,7 +2,8 @@
 @import 'libs/reset';
 @import 'libs/tinyslider';
 @import 'libs/ligthbox';
-@import 'libs/bvi';
+@import 'libs/bvi'; 
+@import 'libs/snowballs';
 
 html,body {
     padding: 0;
@@ -86,9 +87,7 @@ table td {
 @import 'blocks/accordion';
 @import 'blocks/employe';
 @import 'blocks/buttons';
-@import 'libs/snowballs';
-
-
+@import 'blocks/feedback';
 
 
 @import 'media/meida';

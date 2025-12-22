@@ -1,0 +1,137 @@
+
+<div class="container">
+    <div class="page_content">
+        <div class="feedback-page">
+            <!-- Сообщения будут добавляться через JavaScript -->
+            <div id="ajaxStatus" class="status-message" style="display: none;"></div>
+
+            <div class="content-container">
+                <!-- Левая колонка: Форма обратной связи -->
+                <div class="feedback-form-container">
+                    <h2>Форма обратной связи</h2>
+                    <form id="feedbackForm" class="feedback-form" method="POST" action="">
+                        <?php wp_nonce_field('feedback_ajax_action', 'feedback_nonce'); ?>
+                        
+                        <div>
+                            <label for="fullName">ФИО *</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        
+                        <div>
+                            <label for="email">Электронная почта *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div>
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div>
+                            <label for="topic">Тема обращения *</label>
+                            <select id="topic" name="topic" required>
+                                <option value="">Выберите тему</option>
+                                <option value="admission">Поступление в колледж</option>
+                                <option value="education">Образовательный процесс</option>
+                                <option value="documents">Документы</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message">Сообщение *</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        
+                        <!-- Блок согласия -->
+                      <div class="consent-block">
+    <div class="consent-wrapper">
+        <div class="custom-checkbox">
+            <input type="checkbox" id="consent" name="consent" required class="checkbox-input">
+            <label for="consent" class="checkbox-label">
+                <span class="checkbox-custom"></span>
+                <span class="checkbox-text">
+                    <strong>Я даю согласие на обработку моих персональных данных *</strong>
+                    <span class="consent-description">
+                        В соответствии с Федеральным законом №152-ФЗ «О персональных данных» подтверждаю свое согласие на обработку 
+                        предоставленных мной персональных данных. Ознакомлен(а) с 
+                        <a href="/privacy-policy/" target="_blank" class="privacy-link">Политикой конфиденциальности</a>.
+                    </span>
+                </span>
+            </label>
+        </div>
+    </div>
+</div>
+                        <div style="display: none;">
+    <label for="website">Website</label>
+    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+</div>
+                        <button type="submit" id="submitBtn" name="feedback_submit">Отправить обращение</button>
+                        
+                        <div style="margin-top: 15px; font-size: 14px; color: #666; text-align: center;">
+                            * — поля, обязательные для заполнения
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Правая колонка: Аккордеон с FAQ -->
+                <div class="faq-accordion">
+                    <h2>Часто задаваемые вопросы</h2>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            На какой курс можно поступить в вуз после колледжа и предоставляется ли отсрочка от армии?
+                        </div>
+                        <div class="accordion-content">
+                            <p>Официально поступление осуществляется только на 1 курс, но после зачисления дисциплины, которые вы освоили в колледже, могут перезачесть в вузе и перевести вас на другой курс. Отсрочка от армии при поступлении в вуз после колледжа не предоставляется.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            Какие документы необходимы для поступления?
+                        </div>
+                        <div class="accordion-content">
+                            <p>Для поступления необходимы: оригинал или ксерокопия документов, удостоверяющих личность и гражданство; оригинал или ксерокопия документа об образовании; 6 фотографий размером 3×4 см; СНИЛС. Для специальности "Ветеринария" также требуется справка формы 086-у.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            Каковы сроки приема документов?
+                        </div>
+                        <div class="accordion-content">
+                            <p>Прием документов на очную форму обучения осуществляется с 20 июня до 15 августа, на заочную форму — с 20 июня до 1 декабря.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            Проводятся ли вступительные испытания?
+                        </div>
+                        <div class="accordion-content">
+                            <p>Вступительные испытания по образовательным программам не проводятся. Зачисление происходит на основе конкурса документов.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            Как обрабатываются мои персональные данные?
+                        </div>
+                        <div class="accordion-content">
+                            <p>Ваши персональные данные обрабатываются в соответствии с Федеральным законом №152-ФЗ «О персональных данных». Мы используем предоставленную информацию исключительно для обработки вашего обращения и не передаем ее третьим лицам.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-block">
+                <h3>Информация о защите персональных данных</h3>
+                <p>Отправляя обращение, вы даете согласие на обработку ваших персональных данных в соответствии с законодательством РФ. Ваши данные будут использованы только для ответа на ваше обращение и не будут переданы третьим лицам.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
