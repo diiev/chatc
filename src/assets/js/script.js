@@ -8,7 +8,6 @@ import Accordion from './modules/accordion';
 import menu from './modules/menu';
 import scrolling from './modules/scrolling';
 import isHomepage from './modules/isHomePage';
-import cookie from './modules/cookies';
 import newyear from './modules/newyear';
 import Snow from './modules/snow';
 import feedback from './modules/feedback';
