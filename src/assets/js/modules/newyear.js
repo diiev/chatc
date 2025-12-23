@@ -5,7 +5,7 @@ function newyear () {
   const inSeason = (m === 11 && d >= 15) || (m === 0 && d <= 15);
   if (!inSeason) return;
 
-  const path = 'wp-content/themes/chatc/assets/audio/';
+ const path = `${window.location.origin}/wp-content/themes/chatc/assets/audio/`;
   const sounds = Array.from({ length: 36 }, (_, i) => `${path}sound${i + 1}.mp3`);
 
   const AudioCtx = window.AudioContext || window.webkitAudioContext;
@@ -14,7 +14,6 @@ function newyear () {
   let bufferList = [];
   let loaded = false;
   let preset = 0;
-  let currentBall = null;
   let loadingStarted = false;
 
   function loadAllSounds() {
@@ -32,6 +31,10 @@ function newyear () {
 
     Promise.all(promises).then(() => {
       loaded = true;
+     // console.log('✅ All sounds loaded!');
+    }).catch(err => {
+    //  console.error('❌ Sound loading failed:', err);
+      loaded = true; // разблокируем анимацию
     });
   }
 
@@ -46,52 +49,53 @@ function newyear () {
     gainNode.gain.setValueAtTime(1, context.currentTime);
     source.start(context.currentTime);
 
-    // плавное затухание
     const stopTime = context.currentTime + 1;
     gainNode.gain.exponentialRampToValueAtTime(0.1, stopTime);
     source.stop(stopTime);
 
-    // вернуть объект, если нужно управлять извне
     return { source, gainNode };
   }
 
-  function ballBounce(elem) {
-    if (!elem || elem.className.indexOf('bounce') > -1) return;
+  // ✅ ИСПРАВЛЕНА АНИМАЦИЯ — классы на ПРАВИЛЬНЫХ элементах
+  function ballBounce(ballElement) {
+    // Проверяем, что элемент существует и не анимируется
+    if (!ballElement || ballElement.classList.contains('bounce')) return;
 
-    elem.classList.add('bounce');
+    // Добавляем классы НА САМ ЭЛЕМЕНТ .b-ball_bounce
+    ballElement.classList.add('bounce');
+    
     setTimeout(() => {
-      elem.classList.remove('bounce');
-      elem.classList.add('bounce1');
+      ballElement.classList.remove('bounce');
+      ballElement.classList.add('bounce1');
       setTimeout(() => {
-        elem.classList.remove('bounce1');
-        elem.classList.add('bounce2');
+        ballElement.classList.remove('bounce1');
+        ballElement.classList.add('bounce2');
         setTimeout(() => {
-          elem.classList.remove('bounce2');
-          elem.classList.add('bounce3');
+          ballElement.classList.remove('bounce2');
+          ballElement.classList.add('bounce3');
           setTimeout(() => {
-            elem.classList.remove('bounce3');
+            ballElement.classList.remove('bounce3');
           }, 300);
         }, 300);
       }, 300);
     }, 300);
   }
 
+  // ✅ Находим ВСЕ элементы с классом .b-ball_bounce
   const buttons = document.querySelectorAll('.b-ball_bounce');
+
   buttons.forEach((btn, i) => {
+    // Устанавливаем data-note
     btn.dataset.note = i;
+    //console.log(`Ball ${i}:`, btn); // дебаж
 
     btn.addEventListener('mouseenter', function () {
-      // первая наведение — запуск загрузки
-      loadAllSounds();
-      if (!loaded) return;
-
+      loadAllSounds(); // звук в фоне
+      
       const index = parseInt(this.dataset.note, 10) + preset;
-      currentBall = playSound(index);
-      ballBounce(this);
-    });
-
-    btn.addEventListener('mouseleave', function () {
-      // можно добавить стоп, если нужно мгновенно глушить звук
+      playSound(index); // звук когда готов
+      
+      ballBounce(this); // ✅ анимация СРАЗУ
     });
   });
 
@@ -112,12 +116,11 @@ function newyear () {
     if (!(code in keyToIndex)) return;
 
     loadAllSounds();
-    if (!loaded) return;
-
     const index = keyToIndex[code];
     playSound(index);
+    
     const ball = document.querySelector(`[data-note="${index}"]`);
-    ballBounce(ball);
+    if (ball) ballBounce(ball);
   });
 }
 

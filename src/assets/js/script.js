@@ -11,6 +11,7 @@ import isHomepage from './modules/isHomePage';
 import newyear from './modules/newyear';
 import Snow from './modules/snow';
 import feedback from './modules/feedback';
+import lazyvideo from './modules/lazyvideo';
 document.addEventListener('DOMContentLoaded', () => {   
   try { 
     
@@ -30,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       showSnowBalls: false
     })  
    feedback()
+   lazyvideo()
   } 
   catch (e) {} 
 }); 

@@ -7104,6 +7104,10 @@ th {
     color: #0e873f;
 }
 
+.post-views {
+    display: inline-block !important;
+}
+
 .logo_border {
     display: flex;
     justify-content: flex-start;
